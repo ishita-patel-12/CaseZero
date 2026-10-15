@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <defs>
+    <radialGradient id="bgR" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#b4a78c"/>
+      <stop offset="100%" stop-color="#6e5e46"/>
+    </radialGradient>
+    <filter id="grnR">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="b"/>
+      <feComposite in="b" in2="SourceGraphic" operator="in"/>
+    </filter>
+    <radialGradient id="vigR" cx="50%" cy="50%" r="70%">
+      <stop offset="50%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#22180e" stop-opacity="0.9"/>
+    </radialGradient>
+  </defs>
+  <!-- Aged background -->
+  <rect width="400" height="500" fill="url(#bgR)"/>
+  <rect width="400" height="500" fill="url(#vigR)"/>
+
+  <!-- Body / attire: Victorian groundskeeper heavy tweed jacket, coarse woolen scarf -->
+  <ellipse cx="200" cy="455" rx="145" ry="90" fill="#242018"/>
+  <rect x="120" y="325" width="160" height="150" rx="16" fill="#302a20"/>
+  <!-- Coarse wool neckerchief / muffler -->
+  <path d="M165 315 Q200 345 235 315 L225 350 Q200 365 175 350 Z" fill="#443224"/>
+  <path d="M185 345 L200 395 L215 345 Z" fill="#38281a"/>
+  <!-- Brass jacket button -->
+  <circle cx="200" cy="415" r="4" fill="#886a34" stroke="#54401c" stroke-width="0.8"/>
+
+  <!-- Head — weathered, square jaw -->
+  <polygon points="135,195 265,195 255,290 200,312 145,290" fill="#b8926c"/>
+
+  <!-- Hair & Flat cap / newsboy cap -->
+  <ellipse cx="200" cy="155" rx="76" ry="34" fill="#2e281e"/>
+  <!-- Cap visor / brim -->
+  <path d="M125 168 Q200 148 275 168 Q240 185 160 185 Z" fill="#221c14"/>
+  <!-- Cap crown folded forward -->
+  <ellipse cx="200" cy="148" rx="68" ry="26" fill="#363024"/>
+  <!-- Cap button on top -->
+  <circle cx="200" cy="132" r="3.5" fill="#1e1810"/>
+
+  <!-- Rough hair beneath cap -->
+  <path d="M136 185 Q132 205 138 220" fill="none" stroke="#2a2218" stroke-width="4" stroke-linecap="round"/>
+  <path d="M264 185 Q268 205 262 220" fill="none" stroke="#2a2218" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Ears -->
+  <ellipse cx="132" cy="226" rx="8" ry="14" fill="#a8805c"/>
+  <ellipse cx="268" cy="226" rx="8" ry="14" fill="#a8805c"/>
+
+  <!-- Weathered / rugged skin lines on forehead and cheeks -->
+  <path d="M168 185 Q200 180 232 185" fill="none" stroke="#7e5a3c" stroke-width="1.2" opacity="0.6"/>
+  <path d="M152 225 L144 228" stroke="#7e5a3c" stroke-width="1" opacity="0.6"/>
+  <path d="M248 225 L256 228" stroke="#7e5a3c" stroke-width="1" opacity="0.6"/>
+
+  <!-- Eyes — squinted from wind and outdoor weather, deep brown -->
+  <ellipse cx="172" cy="216" rx="10.5" ry="6.5" fill="#18120c"/>
+  <ellipse cx="228" cy="216" rx="10.5" ry="6.5" fill="#18120c"/>
+  <circle cx="172" cy="216" r="4.2" fill="#241a10"/>
+  <circle cx="228" cy="216" r="4.2" fill="#241a10"/>
+  <circle cx="174" cy="215" r="1.2" fill="#ffffff"/>
+  <circle cx="230" cy="215" r="1.2" fill="#ffffff"/>
+
+  <!-- Eyebrows — thick, rugged, dark brown -->
+  <path d="M156 205 Q172 198 188 205" fill="none" stroke="#221a12" stroke-width="3" stroke-linecap="round"/>
+  <path d="M212 205 Q228 198 244 205" fill="none" stroke="#221a12" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Nose — broad, strong bridge -->
+  <path d="M196 210 L194 245 L206 245" fill="none" stroke="#8a6240" stroke-width="2"/>
+  <ellipse cx="192" cy="244" rx="4" ry="2.5" fill="#7a5232" opacity="0.6"/>
+  <ellipse cx="208" cy="244" rx="4" ry="2.5" fill="#7a5232" opacity="0.6"/>
+
+  <!-- Five o'clock shadow / stubble texture -->
+  <ellipse cx="200" cy="275" rx="45" ry="26" fill="#6c5034" opacity="0.25"/>
+
+  <!-- Mouth — weathered, firm, set jaw -->
+  <path d="M180 268 Q200 266 220 268" fill="none" stroke="#6e4228" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- Grain texture overlay -->
+  <rect width="400" height="500" fill="#665230" opacity="0.12" filter="url(#grnR)"/>
+  <!-- Damaged corners -->
+  <path d="M0 0 L30 0 L0 30 Z" fill="#241a0e" opacity="0.4"/>
+  <path d="M400 500 L370 500 L400 470 Z" fill="#241a0e" opacity="0.4"/>
+
+  <!-- Bottom title card -->
+  <rect x="0" y="460" width="400" height="40" fill="#120e0a" opacity="0.8"/>
+  <text x="200" y="478" font-family="Georgia,serif" font-size="13" fill="#c4b490" text-anchor="middle">THOMAS REED</text>
+  <text x="200" y="494" font-family="monospace" font-size="9" fill="#8a7a5a" text-anchor="middle">Groundskeeper · Generator Attendant</text>
+</svg>

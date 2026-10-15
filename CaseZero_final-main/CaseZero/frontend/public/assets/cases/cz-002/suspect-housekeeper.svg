@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <defs>
+    <radialGradient id="bgH" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#bfb397"/>
+      <stop offset="100%" stop-color="#7a6c52"/>
+    </radialGradient>
+    <filter id="grnH">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="b"/>
+      <feComposite in="b" in2="SourceGraphic" operator="in"/>
+    </filter>
+    <radialGradient id="vigH" cx="50%" cy="50%" r="70%">
+      <stop offset="50%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#2a1e12" stop-opacity="0.86"/>
+    </radialGradient>
+  </defs>
+  <!-- Aged background -->
+  <rect width="400" height="500" fill="url(#bgH)"/>
+  <rect width="400" height="500" fill="url(#vigH)"/>
+
+  <!-- Body / attire: Victorian housekeeper black bombazine dress with white linen collar -->
+  <ellipse cx="200" cy="445" rx="135" ry="85" fill="#181616"/>
+  <rect x="125" y="325" width="150" height="150" rx="16" fill="#201e1e"/>
+  <!-- Modest white linen collar with small jet brooch -->
+  <path d="M162 315 Q200 338 238 315 L230 335 Q200 350 170 335 Z" fill="#e6ded0"/>
+  <ellipse cx="200" cy="334" rx="4.5" ry="5.5" fill="#141414" stroke="#4a4440" stroke-width="0.8"/>
+  <!-- Key ring / chatelaine chain visible on waist -->
+  <path d="M150 430 Q160 450 170 435" fill="none" stroke="#9e8a50" stroke-width="1.5"/>
+  <circle cx="170" cy="445" r="4.5" fill="none" stroke="#9e8a50" stroke-width="1.2"/>
+  <circle cx="174" cy="452" r="3.5" fill="none" stroke="#9e8a50" stroke-width="1"/>
+
+  <!-- Head -->
+  <ellipse cx="200" cy="222" rx="64" ry="76" fill="#c4a27d"/>
+
+  <!-- Hair — parted in middle, pulled tight, dark brown with grey streaks -->
+  <ellipse cx="200" cy="165" rx="68" ry="42" fill="#26201a"/>
+  <path d="M136 195 Q135 155 160 148 Q200 142 240 148 Q265 155 264 195 Q255 170 235 160 Q200 152 165 160 Q145 170 136 195" fill="#322a22"/>
+  <path d="M178 152 Q200 155 222 152" fill="none" stroke="#6a645c" stroke-width="1" opacity="0.6"/>
+
+  <!-- Housekeeper ruffled lace day cap / bonnet -->
+  <path d="M150 145 Q200 128 250 145 Q260 160 250 170 Q200 145 150 170 Q140 160 150 145 Z" fill="#eae2d4"/>
+  <path d="M148 148 Q155 142 165 146 Q175 140 185 144 Q195 138 205 144 Q215 138 225 144 Q235 140 245 146" fill="none" stroke="#b8ac98" stroke-width="1"/>
+
+  <!-- Ears -->
+  <ellipse cx="135" cy="225" rx="7.5" ry="12" fill="#b4926e"/>
+  <ellipse cx="265" cy="225" rx="7.5" ry="12" fill="#b4926e"/>
+
+  <!-- Eyes — observant, perceptive, hazel -->
+  <ellipse cx="174" cy="216" rx="10.5" ry="7.5" fill="#221c16"/>
+  <ellipse cx="226" cy="216" rx="10.5" ry="7.5" fill="#221c16"/>
+  <circle cx="174" cy="216" r="4.8" fill="#3c3822"/>
+  <circle cx="226" cy="216" r="4.8" fill="#3c3822"/>
+  <circle cx="175" cy="214" r="1.3" fill="#ffffff"/>
+  <circle cx="227" cy="214" r="1.3" fill="#ffffff"/>
+
+  <!-- Eyebrows — gentle natural arches with slight furrow -->
+  <path d="M162 205 Q174 200 187 204" fill="none" stroke="#2c221a" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M213 204 Q226 200 238 205" fill="none" stroke="#2c221a" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- Character lines (laughter/worry lines around eyes & mouth) -->
+  <path d="M160 216 L154 214" stroke="#9a7a58" stroke-width="0.9" opacity="0.6"/>
+  <path d="M240 216 L246 214" stroke="#9a7a58" stroke-width="0.9" opacity="0.6"/>
+  <path d="M172 248 Q168 260 174 270" fill="none" stroke="#9a7a58" stroke-width="1" opacity="0.5"/>
+  <path d="M228 248 Q232 260 226 270" fill="none" stroke="#9a7a58" stroke-width="1" opacity="0.5"/>
+
+  <!-- Nose -->
+  <path d="M197 214 L196 242 L204 242" fill="none" stroke="#9a724e" stroke-width="1.6"/>
+
+  <!-- Mouth — composed, steadfast -->
+  <path d="M184 260 Q200 263 216 260" fill="none" stroke="#82523e" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Grain texture overlay -->
+  <rect width="400" height="500" fill="#665230" opacity="0.12" filter="url(#grnH)"/>
+  <!-- Damaged corners -->
+  <path d="M0 0 L30 0 L0 30 Z" fill="#241a0e" opacity="0.4"/>
+  <path d="M400 500 L370 500 L400 470 Z" fill="#241a0e" opacity="0.4"/>
+
+  <!-- Bottom title card -->
+  <rect x="0" y="460" width="400" height="40" fill="#120e0a" opacity="0.8"/>
+  <text x="200" y="478" font-family="Georgia,serif" font-size="13" fill="#c4b490" text-anchor="middle">MIRIAM FROST</text>
+  <text x="200" y="494" font-family="monospace" font-size="9" fill="#8a7a5a" text-anchor="middle">Head Housekeeper · Key Custodian</text>
+</svg>

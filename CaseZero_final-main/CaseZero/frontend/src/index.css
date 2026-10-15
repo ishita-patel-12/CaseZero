@@ -1,0 +1,390 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-950: #080706;
+  --color-ink-900: #0e0d0c;
+  --color-ink-850: #141311;
+  --color-ink-800: #1c1a17;
+  --color-ink-700: #262420;
+  --color-ink-600: #36332d;
+
+  --color-surface: #141311;
+  --color-surface-hover: #1c1a17;
+  --color-surface-elevated: #24221d;
+  --color-surface-card: #181614;
+
+  --color-paper: #ede5d8;
+  --color-paper-muted: #b8ad99;
+  --color-paper-dark: #2a251e;
+  --color-paper-light: #f7f2e8;
+
+  --color-brass: #c89b4e;
+  --color-brass-light: #dfb368;
+  --color-brass-dark: #8c6724;
+
+  --color-wine: #7f2222;
+  --color-wine-dark: #4a1313;
+  --color-wine-light: #9c3232;
+
+  --color-charcoal-border: rgba(237, 229, 216, 0.1);
+  --color-charcoal-border-strong: rgba(237, 229, 216, 0.2);
+
+  --color-cz-bg: #08090B;
+  --color-cz-bg2: #111317;
+  --color-cz-elev: #191C21;
+  --color-cz-text: #E8E3D9;
+  --color-cz-dim: #93969B;
+  --color-cz-line: #303239;
+  --color-cz-red: #B83A32;
+  --color-cz-paper: #C9BDA7;
+  --color-cz-cool: #71838A;
+
+  --font-display: 'Bebas Neue', 'Barlow Condensed', Impact, sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'JetBrains Mono', 'Courier New', monospace;
+}
+
+:root {
+  --bg-main: #0e0d0c;
+  --text-main: #ede5d8;
+  --brass: #c89b4e;
+  --wine: #7f2222;
+  --border-subtle: rgba(237, 229, 216, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #08090B;
+  color: #ede5d8;
+  font-family: 'Manrope', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(ellipse 90% 80% at 50% -20%, rgba(200, 155, 78, 0.035), transparent),
+    radial-gradient(ellipse 60% 60% at 85% 100%, rgba(127, 34, 34, 0.03), transparent);
+}
+
+/* ==========================================
+   CUSTOM SCROLLBAR
+   ========================================== */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #080706; }
+::-webkit-scrollbar-thumb { background: #262420; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #c89b4e; }
+.scrollbar-none::-webkit-scrollbar { display: none; }
+
+:focus-visible { outline: 1px solid #c89b4e; outline-offset: 2px; }
+
+/* ==========================================
+   TYPOGRAPHY UTILITIES
+   ========================================== */
+.font-serif {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+.font-sans {
+  font-family: 'Manrope', sans-serif;
+}
+.font-mono {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+}
+.font-display {
+  font-family: 'Bebas Neue', 'Barlow Condensed', Impact, sans-serif;
+}
+
+/* ==========================================
+   KEYFRAME ANIMATIONS
+   ========================================== */
+
+/* Stamp drop */
+@keyframes stampIn {
+  0%   { transform: scale(1.6) rotate(-8deg); opacity: 0; }
+  70%  { transform: scale(0.97) rotate(-3deg); opacity: 0.95; }
+  100% { transform: scale(1) rotate(-3.5deg); opacity: 0.95; }
+}
+
+@keyframes fadeUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes fadeDown {
+  from { transform: translateY(-16px); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scalePop {
+  0%   { transform: scale(0.92); opacity: 0; }
+  100% { transform: scale(1);    opacity: 1; }
+}
+
+@keyframes radarPulse {
+  0%   { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(200, 155, 78, 0.7); }
+  70%  { transform: scale(1.05); box-shadow: 0 0 0 14px rgba(200, 155, 78, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(200, 155, 78, 0); }
+}
+
+@keyframes radarPulseDiscovered {
+  0%   { transform: scale(1); box-shadow: 0 0 0 0 rgba(237, 229, 216, 0.4); }
+  70%  { transform: scale(1); box-shadow: 0 0 0 8px rgba(237, 229, 216, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(237, 229, 216, 0); }
+}
+
+@keyframes lineDraw {
+  from { stroke-dashoffset: 400; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes toastSlide {
+  from { transform: translateX(110%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+/* ==========================================
+   ANIMATION CLASSES
+   ========================================== */
+.animate-fadeUp   { animation: fadeUp   0.45s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-fadeDown { animation: fadeDown 0.35s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-fadeIn   { animation: fadeIn   0.3s ease both; }
+.animate-scalePop { animation: scalePop 0.35s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-toast    { animation: toastSlide 0.35s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+/* Stagger delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+
+/* ==========================================
+   INVESTIGATIVE STAMP
+   ========================================== */
+.stamp {
+  animation: stampIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 800;
+  display: inline-block;
+  user-select: none;
+}
+.stamp-red {
+  border: 2px solid #7f2222;
+  color: #a83636;
+  background-color: rgba(127, 34, 34, 0.1);
+  text-shadow: 0 0 8px rgba(127, 34, 34, 0.3);
+}
+.stamp-gold {
+  border: 2px solid #c89b4e;
+  color: #dfb368;
+  background-color: rgba(200, 155, 78, 0.08);
+}
+.stamp-classified {
+  border: 2px dashed #7f2222;
+  color: #b83a3a;
+  background: rgba(127, 34, 34, 0.08);
+}
+
+/* ==========================================
+   HOTSPOT BEACONS
+   ========================================== */
+.hotspot-active {
+  animation: radarPulse 2.2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+.hotspot-found {
+  animation: radarPulseDiscovered 3s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* ==========================================
+   PINBOARD / CORKBOARD TEXTURE
+   ========================================== */
+.pinboard-grid {
+  background-image:
+    linear-gradient(rgba(200, 155, 78, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 155, 78, 0.06) 1px, transparent 1px),
+    linear-gradient(rgba(237, 229, 216, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(237, 229, 216, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px, 60px 60px, 20px 20px, 20px 20px;
+  background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+}
+
+/* ==========================================
+   FILM GRAIN & TEXTURE OVERLAYS
+   ========================================== */
+.film-grain {
+  position: relative;
+}
+.film-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/textures/film-grain.svg');
+  background-repeat: repeat;
+  pointer-events: none;
+  opacity: 0.45;
+  mix-blend-mode: overlay;
+  z-index: 2;
+}
+
+/* Vignette overlay */
+.vignette-overlay {
+  position: relative;
+}
+.vignette-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 35%, rgba(10, 9, 8, 0.85) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ==========================================
+   PHYSICAL EVIDENCE OBJECTS
+   ========================================== */
+
+/* Realistic photograph exhibit */
+.photo-exhibit {
+  background: #f4ede2;
+  padding: 10px 10px 24px 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7), 0 2px 8px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.photo-exhibit:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.85);
+}
+
+/* Paper document exhibit */
+.document-exhibit {
+  background-color: #ede5d8;
+  color: #171513;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6), inset 0 0 60px rgba(184, 150, 100, 0.15);
+  border: 1px solid rgba(130, 110, 80, 0.25);
+  position: relative;
+}
+
+/* Security Keycard */
+.keycard-exhibit {
+  background: linear-gradient(145deg, #1e242d 0%, #0f1318 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.65);
+  border-radius: 6px;
+}
+
+/* Train Ticket */
+.ticket-exhibit {
+  background-color: #e4d7c3;
+  color: #26221c;
+  border-top: 2px dashed #8c7b64;
+  border-bottom: 2px dashed #8c7b64;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55);
+}
+
+/* Redacted text */
+.redacted {
+  background-color: #24221d;
+  color: transparent;
+  user-select: none;
+  padding: 0 4px;
+  border-radius: 2px;
+  display: inline-block;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.redacted:hover {
+  background-color: #3b362c;
+  color: #ede5d8;
+  cursor: help;
+}
+
+/* Line animation for evidence board */
+.board-line-animated {
+  stroke-dasharray: 400;
+  animation: lineDraw 0.8s ease-out forwards;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* ==========================================
+   CINEMATIC SYSTEM (landing + transitions)
+   ========================================== */
+.cz-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  background-image: url('/assets/textures/film-grain.svg');
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+  animation: czGrain 1.2s steps(6) infinite;
+}
+@keyframes czGrain {
+  0%   { transform: translate(0, 0); }
+  20%  { transform: translate(-3%, 2%); }
+  40%  { transform: translate(2%, -3%); }
+  60%  { transform: translate(-2%, -1%); }
+  80%  { transform: translate(3%, 3%); }
+  100% { transform: translate(0, 0); }
+}
+.cz-vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 45%, transparent 38%, rgba(4, 5, 6, 0.88) 100%);
+}
+.cz-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 900ms cubic-bezier(0.16, 1, 0.3, 1), transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cz-reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+.cz-underline {
+  background: linear-gradient(currentColor, currentColor) left bottom / 0% 1px no-repeat;
+  transition: background-size 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cz-underline:hover, .cz-underline:focus-visible {
+  background-size: 100% 1px;
+}
+@keyframes czFlicker {
+  0%, 100% { opacity: 1; }
+  47% { opacity: 1; }
+  48% { opacity: 0.82; }
+  50% { opacity: 1; }
+  91% { opacity: 0.9; }
+  93% { opacity: 1; }
+}
+.cz-flicker { animation: czFlicker 7s infinite; }
+@keyframes czBreath {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.75; }
+}
+.cz-breath { animation: czBreath 3.6s ease-in-out infinite; }
+@keyframes czFadeScreen {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.cz-page-in { animation: czFadeScreen 700ms ease both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cz-grain, .cz-flicker, .cz-breath { animation: none !important; }
+  .cz-reveal { opacity: 1; transform: none; transition: none; }
+}

@@ -1,0 +1,353 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComposite in="blend" in2="SourceGraphic" operator="in"/>
+    </filter>
+    <filter id="flicker">
+      <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="1" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <radialGradient id="roomLight" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#4a3820" stop-opacity="0.7"/>
+      <stop offset="60%" stop-color="#1a1208" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#050302" stop-opacity="1"/>
+    </radialGradient>
+    <radialGradient id="fireplaceGlow" cx="50%" cy="80%" r="40%">
+      <stop offset="0%" stop-color="#8b3a0f" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#0a0604" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="deskLamp" cx="65%" cy="55%" r="25%">
+      <stop offset="0%" stop-color="#c8960e" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#0a0604" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="floorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a1f0e"/>
+      <stop offset="100%" stop-color="#0d0a04"/>
+    </linearGradient>
+    <linearGradient id="wallGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e1710"/>
+      <stop offset="100%" stop-color="#130e08"/>
+    </linearGradient>
+    <linearGradient id="woodDesk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a2e10"/>
+      <stop offset="50%" stop-color="#3a2008"/>
+      <stop offset="100%" stop-color="#1e1004"/>
+    </linearGradient>
+    <linearGradient id="windowLight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2535" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0d1520" stop-opacity="0.95"/>
+    </linearGradient>
+    <clipPath id="sceneClip">
+      <rect width="1600" height="900"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background: Victorian Study, deep dark -->
+  <rect width="1600" height="900" fill="#0a0804"/>
+
+  <!-- Back wall — panelled wood -->
+  <rect x="0" y="0" width="1600" height="760" fill="url(#wallGrad)"/>
+  <!-- Wall panels -->
+  <rect x="30" y="30" width="320" height="620" fill="none" stroke="#2a1f0e" stroke-width="2" rx="2"/>
+  <rect x="50" y="50" width="280" height="580" fill="none" stroke="#1a1408" stroke-width="1"/>
+  <rect x="380" y="30" width="380" height="620" fill="none" stroke="#2a1f0e" stroke-width="2" rx="2"/>
+  <rect x="400" y="50" width="340" height="580" fill="none" stroke="#1a1408" stroke-width="1"/>
+  <rect x="800" y="30" width="380" height="620" fill="none" stroke="#2a1f0e" stroke-width="2" rx="2"/>
+  <rect x="820" y="50" width="340" height="580" fill="none" stroke="#1a1408" stroke-width="1"/>
+  <rect x="1230" y="30" width="340" height="620" fill="none" stroke="#2a1f0e" stroke-width="2" rx="2"/>
+  <rect x="1250" y="50" width="300" height="580" fill="none" stroke="#1a1408" stroke-width="1"/>
+
+  <!-- Decorative dado rail -->
+  <rect x="0" y="440" width="1600" height="8" fill="#2e2010"/>
+  <rect x="0" y="435" width="1600" height="3" fill="#3a2810"/>
+  <rect x="0" y="448" width="1600" height="3" fill="#1a1008"/>
+
+  <!-- Floor — dark parquet -->
+  <rect x="0" y="760" width="1600" height="140" fill="url(#floorGrad)"/>
+  <!-- Parquet lines horizontal -->
+  <line x1="0" y1="780" x2="1600" y2="780" stroke="#1a1208" stroke-width="1"/>
+  <line x1="0" y1="810" x2="1600" y2="810" stroke="#1a1208" stroke-width="1"/>
+  <line x1="0" y1="840" x2="1600" y2="840" stroke="#1a1208" stroke-width="1"/>
+  <line x1="0" y1="870" x2="1600" y2="870" stroke="#1a1208" stroke-width="1"/>
+  <!-- Parquet vertical boards -->
+  <line x1="200" y1="760" x2="200" y2="900" stroke="#1a1208" stroke-width="1"/>
+  <line x1="400" y1="760" x2="400" y2="900" stroke="#1a1208" stroke-width="1"/>
+  <line x1="600" y1="760" x2="600" y2="900" stroke="#1a1208" stroke-width="1"/>
+  <line x1="800" y1="760" x2="800" y2="900" stroke="#1a1208" stroke-width="1"/>
+  <line x1="1000" y1="760" x2="1000" y2="900" stroke="#1a1208" stroke-width="1"/>
+  <line x1="1200" y1="760" x2="1200" y2="900" stroke="#1a1208" stroke-width="1"/>
+  <line x1="1400" y1="760" x2="1400" y2="900" stroke="#1a1208" stroke-width="1"/>
+
+  <!-- ── STUDY DOOR (left wall, partially ajar) ── -->
+  <!-- Door frame -->
+  <rect x="30" y="60" width="270" height="680" fill="#1a1208" rx="4"/>
+  <rect x="40" y="70" width="250" height="660" fill="#0f0d08" rx="3"/>
+  <!-- Door panels -->
+  <rect x="60" y="100" width="210" height="270" fill="#18130a" rx="2" stroke="#2e2010" stroke-width="1.5"/>
+  <rect x="60" y="390" width="210" height="270" fill="#18130a" rx="2" stroke="#2e2010" stroke-width="1.5"/>
+  <!-- Door handle -->
+  <circle cx="280" cy="430" r="12" fill="#3a2e1a" stroke="#5a4828" stroke-width="2"/>
+  <rect x="285" y="420" width="8" height="20" rx="3" fill="#4a3820"/>
+
+  <!-- ── STUDY BOLT — HOTSPOT 1: Study door bolt ── -->
+  <!-- Position: upper portion of door, right side — approximately x:18%, y:38% -->
+  <rect x="264" y="310" width="55" height="18" rx="3" fill="#3a3020" stroke="#6a5830" stroke-width="1.5"/>
+  <rect x="268" y="314" width="36" height="10" rx="2" fill="#5a4a2a" stroke="#8a7848" stroke-width="1"/>
+  <!-- Bolt pin -->
+  <rect x="304" y="312" width="14" height="14" rx="2" fill="#6a5830"/>
+  <!-- Indicator label -->
+  <text x="185" y="308" font-family="monospace" font-size="9" fill="#c89b4e" opacity="0.85" text-anchor="middle">STUDY BOLT</text>
+  <line x1="244" y1="309" x2="264" y2="319" stroke="#c89b4e" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- ── WINDOW SHUTTERS — HOTSPOT 2: Window shutters ── -->
+  <!-- Central tall windows — position: x:48%, y:22% -->
+  <rect x="470" y="50" width="260" height="380" fill="url(#windowLight)" stroke="#1e1810" stroke-width="3"/>
+  <!-- Shutter left panel -->
+  <rect x="470" y="50" width="128" height="380" fill="#12100a" stroke="#2a2010" stroke-width="2"/>
+  <rect x="482" y="60" width="104" height="350" fill="#0e0c08" stroke="#1e1a10" stroke-width="1"/>
+  <!-- Shutter left planks -->
+  <line x1="470" y1="120" x2="598" y2="120" stroke="#2a2010" stroke-width="1"/>
+  <line x1="470" y1="190" x2="598" y2="190" stroke="#2a2010" stroke-width="1"/>
+  <line x1="470" y1="260" x2="598" y2="260" stroke="#2a2010" stroke-width="1"/>
+  <line x1="470" y1="330" x2="598" y2="330" stroke="#2a2010" stroke-width="1"/>
+  <!-- Shutter right panel -->
+  <rect x="602" y="50" width="128" height="380" fill="#12100a" stroke="#2a2010" stroke-width="2"/>
+  <rect x="614" y="60" width="104" height="350" fill="#0e0c08" stroke="#1e1a10" stroke-width="1"/>
+  <line x1="602" y1="120" x2="730" y2="120" stroke="#2a2010" stroke-width="1"/>
+  <line x1="602" y1="190" x2="730" y2="190" stroke="#2a2010" stroke-width="1"/>
+  <line x1="602" y1="260" x2="730" y2="260" stroke="#2a2010" stroke-width="1"/>
+  <line x1="602" y1="330" x2="730" y2="330" stroke="#2a2010" stroke-width="1"/>
+  <!-- Shutter latch bar — centred -->
+  <rect x="570" y="225" width="60" height="10" rx="3" fill="#3a3020" stroke="#6a5830" stroke-width="1.5"/>
+  <circle cx="600" cy="230" r="6" fill="#5a4820" stroke="#8a7848" stroke-width="1"/>
+  <!-- Window frame top arch -->
+  <path d="M470 50 Q600 30 730 50" fill="none" stroke="#2a1f0e" stroke-width="3"/>
+  <!-- Dust line on sill -->
+  <rect x="470" y="424" width="260" height="4" fill="#2a2010" opacity="0.7"/>
+  <!-- Cobweb hint at corner -->
+  <line x1="470" y1="50" x2="500" y2="70" stroke="#3a3020" stroke-width="0.5" opacity="0.5"/>
+  <line x1="470" y1="50" x2="490" y2="80" stroke="#3a3020" stroke-width="0.5" opacity="0.5"/>
+
+  <!-- ── GRANDFATHER CLOCK — HOTSPOT 3: Grandfather clock ── -->
+  <!-- Right side, tall case clock — position x:83%, y:30% -->
+  <!-- Clock case body -->
+  <rect x="1280" y="60" width="100" height="640" fill="#1e1608" stroke="#2e2010" stroke-width="2" rx="3"/>
+  <rect x="1288" y="68" width="84" height="624" fill="#18120a" stroke="#1a1408" stroke-width="1" rx="2"/>
+  <!-- Clock hood -->
+  <rect x="1278" y="58" width="104" height="140" fill="#241a0c" stroke="#3a2a14" stroke-width="2" rx="3"/>
+  <rect x="1284" y="64" width="92" height="130" fill="#1c1408" stroke="#2a1e10" stroke-width="1" rx="2"/>
+  <!-- Clock face -->
+  <rect x="1298" y="74" width="64" height="64" rx="32" fill="#1a1508" stroke="#4a3820" stroke-width="2"/>
+  <circle cx="1330" cy="106" r="28" fill="#e8d8b0" stroke="#3a2a14" stroke-width="2"/>
+  <!-- Clock numerals (Roman) -->
+  <text x="1330" y="86" font-family="Georgia,serif" font-size="7" fill="#3a2a14" text-anchor="middle">XII</text>
+  <text x="1354" y="110" font-family="Georgia,serif" font-size="7" fill="#3a2a14" text-anchor="middle">III</text>
+  <text x="1330" y="131" font-family="Georgia,serif" font-size="7" fill="#3a2a14" text-anchor="middle">VI</text>
+  <text x="1306" y="110" font-family="Georgia,serif" font-size="7" fill="#3a2a14" text-anchor="middle">IX</text>
+  <!-- Clock hands — stopped at 22:17 -->
+  <!-- Minute hand pointing at XVII (just past 3) -->
+  <line x1="1330" y1="106" x2="1346" y2="92" stroke="#1a1208" stroke-width="2" stroke-linecap="round"/>
+  <!-- Hour hand pointing at X (just before 10 at 22:17) -->
+  <line x1="1330" y1="106" x2="1317" y2="93" stroke="#1a1208" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="1330" cy="106" r="2.5" fill="#1a1208"/>
+  <!-- Clock pendulum chamber -->
+  <rect x="1302" y="200" width="56" height="300" fill="#120e06" stroke="#2a1e10" stroke-width="1" rx="2"/>
+  <!-- Pendulum (wedged, not swinging) -->
+  <line x1="1330" y1="205" x2="1330" y2="430" stroke="#3a2a14" stroke-width="2"/>
+  <ellipse cx="1330" cy="435" rx="16" ry="8" fill="#2e2010" stroke="#4a3820" stroke-width="1.5"/>
+  <!-- Paper wedge visible in pendulum chamber -->
+  <rect x="1320" y="290" width="20" height="8" rx="1" fill="#d4c89a" transform="rotate(-8,1330,294)" opacity="0.9"/>
+  <!-- Clock base moulding -->
+  <rect x="1278" y="695" width="104" height="15" fill="#2a1e0c" stroke="#3a2810" stroke-width="1" rx="2"/>
+  <!-- Clock feet -->
+  <rect x="1290" y="708" width="16" height="10" fill="#1e1608"/>
+  <rect x="1354" y="708" width="16" height="10" fill="#1e1608"/>
+
+  <!-- ── WRITING DESK — main furniture ── -->
+  <!-- Desk surface — position: left-centre of room x:35-75%, y:55-75% -->
+  <rect x="440" y="560" width="740" height="200" fill="url(#woodDesk)" stroke="#2e2010" stroke-width="2" rx="3"/>
+  <!-- Desk top surface -->
+  <rect x="450" y="530" width="720" height="50" fill="#3a2510" stroke="#2a1a08" stroke-width="2" rx="2"/>
+  <!-- Desk leather insert (blotter area) -->
+  <rect x="550" y="534" width="460" height="40" fill="#1a2810" stroke="#2a3818" stroke-width="1" rx="2"/>
+  <!-- Blotter edge border -->
+  <rect x="558" y="538" width="444" height="32" fill="none" stroke="#3a4828" stroke-width="1" rx="1"/>
+
+  <!-- ── CORDIAL TRAY — HOTSPOT 4: Cordial tray ── -->
+  <!-- On desk right — position x:74%, y:58% -->
+  <!-- Silver tray -->
+  <ellipse cx="1060" cy="546" rx="55" ry="12" fill="#3a3a3a" stroke="#5a5a5a" stroke-width="1.5"/>
+  <!-- Decanter -->
+  <rect x="1042" y="500" width="24" height="46" rx="6" fill="#1a2a1a" stroke="#3a4a3a" stroke-width="1.5" opacity="0.85"/>
+  <!-- Stopper — slightly angled as noted in evidence -->
+  <ellipse cx="1054" cy="500" rx="8" ry="5" fill="#2a3a2a" stroke="#4a5a4a" stroke-width="1" transform="rotate(5,1054,500)"/>
+  <!-- Cordial in decanter -->
+  <rect x="1044" y="520" width="20" height="24" rx="4" fill="#1a3510" opacity="0.8"/>
+  <!-- Glass — half full -->
+  <rect x="1070" y="522" width="18" height="26" rx="4" fill="#1a1a20" stroke="#4a4a5a" stroke-width="1" opacity="0.85"/>
+  <!-- Cordial in glass -->
+  <rect x="1072" y="534" width="14" height="12" rx="3" fill="#1a3510" opacity="0.7"/>
+  <!-- Second ring mark on tray -->
+  <ellipse cx="1100" cy="550" rx="10" ry="4" fill="none" stroke="#4a4a4a" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- ── PHYSICIAN'S LEDGER — HOTSPOT 5: Physician's ledger ── -->
+  <!-- On desk left — position x:40%, y:58% -->
+  <!-- Leather bound ledger book -->
+  <rect x="550" y="515" width="88" height="22" rx="2" fill="#1a1208" stroke="#3a2810" stroke-width="1.5" transform="rotate(-2,594,526)"/>
+  <rect x="554" y="518" width="80" height="16" rx="1" fill="#12100a" stroke="#2a2010" stroke-width="0.5" transform="rotate(-2,594,526)"/>
+  <!-- Ledger spine -->
+  <rect x="550" y="515" width="8" height="22" rx="1" fill="#2a1e10" transform="rotate(-2,594,526)"/>
+  <!-- Page edge lines -->
+  <line x1="560" y1="519" x2="630" y2="519" stroke="#2a2010" stroke-width="0.5" opacity="0.7"/>
+  <line x1="560" y1="523" x2="630" y2="523" stroke="#2a2010" stroke-width="0.5" opacity="0.7"/>
+  <line x1="560" y1="527" x2="630" y2="527" stroke="#2a2010" stroke-width="0.5" opacity="0.7"/>
+  <!-- Ink text lines on visible page -->
+  <line x1="562" y1="519" x2="600" y2="519" stroke="#3a3020" stroke-width="1" opacity="0.8"/>
+  <line x1="562" y1="522" x2="610" y2="522" stroke="#3a3020" stroke-width="0.8" opacity="0.7"/>
+  <line x1="562" y1="525" x2="595" y2="525" stroke="#3a3020" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- ── FIREPLACE — HOTSPOT 6: Fireplace grate ── -->
+  <!-- Bottom centre of back wall — position x:57%, y:72% -->
+  <!-- Fireplace surround -->
+  <rect x="760" y="440" width="280" height="330" fill="#18120a" stroke="#2a1e0c" stroke-width="3" rx="4"/>
+  <rect x="770" y="450" width="260" height="310" fill="#120e06" stroke="#1e1808" stroke-width="2" rx="3"/>
+  <!-- Fireplace mantel shelf -->
+  <rect x="748" y="432" width="304" height="20" fill="#2e2010" stroke="#3a2810" stroke-width="2" rx="2"/>
+  <!-- Mantel columns -->
+  <rect x="760" y="432" width="18" height="300" fill="#241a0c" stroke="#3a2810" stroke-width="1"/>
+  <rect x="1022" y="432" width="18" height="300" fill="#241a0c" stroke="#3a2810" stroke-width="1"/>
+  <!-- Fireplace opening — dark, no fire -->
+  <rect x="790" y="460" width="220" height="240" fill="#050302" rx="3"/>
+  <!-- Grate -->
+  <rect x="808" y="660" width="184" height="25" fill="#1a1408" stroke="#2a2010" stroke-width="1.5" rx="2"/>
+  <line x1="830" y1="660" x2="830" y2="685" stroke="#2a2010" stroke-width="1.5"/>
+  <line x1="860" y1="660" x2="860" y2="685" stroke="#2a2010" stroke-width="1.5"/>
+  <line x1="890" y1="660" x2="890" y2="685" stroke="#2a2010" stroke-width="1.5"/>
+  <line x1="920" y1="660" x2="920" y2="685" stroke="#2a2010" stroke-width="1.5"/>
+  <line x1="950" y1="660" x2="950" y2="685" stroke="#2a2010" stroke-width="1.5"/>
+  <!-- BURNED CODICIL FRAGMENT in grate -->
+  <rect x="838" y="662" width="72" height="20" rx="2" fill="#1e1a10" transform="rotate(-5,874,672)" opacity="0.9"/>
+  <!-- Burned edges -->
+  <path d="M838 668 Q845 664 852 668 Q860 665 868 668" fill="#0a0804" stroke="#3a2010" stroke-width="0.5" opacity="0.8"/>
+  <!-- Surviving text fragment (cream coloured) -->
+  <rect x="848" y="666" width="42" height="14" rx="1" fill="#c8b88a" opacity="0.4"/>
+  <!-- Ash remnants -->
+  <ellipse cx="900" cy="678" rx="20" ry="4" fill="#1a1810" opacity="0.6"/>
+  <ellipse cx="840" cy="675" rx="15" ry="3" fill="#1e1c10" opacity="0.5"/>
+
+  <!-- ── ESTATE LEDGER — HOTSPOT 7: Writing desk ledger ── -->
+  <!-- Open ledger on desk centre-left — position x:45%, y:56% -->
+  <!-- Open book on desk -->
+  <rect x="660" y="512" width="140" height="24" rx="2" fill="#d4c89a" stroke="#8a7848" stroke-width="1.5" opacity="0.9"/>
+  <!-- Book spine crease -->
+  <line x1="730" y1="512" x2="730" y2="536" stroke="#8a7848" stroke-width="1.5"/>
+  <!-- Left page lines -->
+  <line x1="668" y1="518" x2="724" y2="518" stroke="#3a3020" stroke-width="0.8"/>
+  <line x1="668" y1="522" x2="724" y2="522" stroke="#3a3020" stroke-width="0.8"/>
+  <line x1="668" y1="526" x2="720" y2="526" stroke="#3a3020" stroke-width="0.8"/>
+  <line x1="668" y1="530" x2="724" y2="530" stroke="#3a3020" stroke-width="0.8"/>
+  <!-- Right page lines -->
+  <line x1="736" y1="518" x2="792" y2="518" stroke="#3a3020" stroke-width="0.8"/>
+  <line x1="736" y1="522" x2="792" y2="522" stroke="#3a3020" stroke-width="0.8"/>
+  <line x1="736" y1="526" x2="786" y2="526" stroke="#3a3020" stroke-width="0.8"/>
+  <line x1="736" y1="530" x2="792" y2="530" stroke="#3a3020" stroke-width="0.8"/>
+  <!-- Suspicious underlined entry -->
+  <line x1="742" y1="522" x2="786" y2="522" stroke="#8a1a1a" stroke-width="1" opacity="0.7"/>
+
+  <!-- ── LEATHER FOLIO — HOTSPOT 8: Leather folio ── -->
+  <!-- On desk far left, partially off edge — position x:32%, y:60% -->
+  <!-- Leather document folio -->
+  <rect x="455" y="538" width="74" height="38" rx="3" fill="#1a1208" stroke="#3a2810" stroke-width="2" transform="rotate(3,492,557)"/>
+  <rect x="460" y="542" width="64" height="30" rx="2" fill="#12100a" stroke="#2a2010" stroke-width="1" transform="rotate(3,492,557)"/>
+  <!-- Folio binding strap -->
+  <rect x="504" y="540" width="8" height="38" rx="2" fill="#2a1e10" transform="rotate(3,508,559)"/>
+  <!-- BROKEN BRASS CLASP — depicted as partially detached -->
+  <rect x="505" y="543" width="14" height="8" rx="2" fill="#7a6830" stroke="#9a8840" stroke-width="1" transform="rotate(3,512,547)"/>
+  <!-- Missing clasp piece indication -->
+  <rect x="510" y="543" width="6" height="8" rx="1" fill="none" stroke="#9a8840" stroke-width="1" stroke-dasharray="2,1" transform="rotate(3,513,547)"/>
+
+  <!-- ── WAX TRACE — HOTSPOT 9: Desk blotter ── -->
+  <!-- On the blotter area, right side — position x:65%, y:58% -->
+  <!-- Black wax fragment on blotter -->
+  <ellipse cx="980" cy="544" rx="12" ry="7" fill="#1a1410" stroke="#2a2018" stroke-width="1.5" transform="rotate(-15,980,544)"/>
+  <!-- Partial seal impression on wax -->
+  <ellipse cx="980" cy="544" rx="8" ry="5" fill="none" stroke="#3a3028" stroke-width="0.8" transform="rotate(-15,980,544)"/>
+  <!-- Heraldic mark impression (very faint) -->
+  <path d="M975 542 L980 539 L985 542 L983 546 L977 546 Z" fill="none" stroke="#3a3028" stroke-width="0.5" opacity="0.7" transform="rotate(-15,980,544)"/>
+
+  <!-- ── BOOKCASE (right wall) ── -->
+  <rect x="1150" y="60" width="120" height="680" fill="#1a1208" stroke="#2e2010" stroke-width="2"/>
+  <!-- Shelves -->
+  <rect x="1152" y="140" width="116" height="6" fill="#2e2010"/>
+  <rect x="1152" y="240" width="116" height="6" fill="#2e2010"/>
+  <rect x="1152" y="340" width="116" height="6" fill="#2e2010"/>
+  <rect x="1152" y="440" width="116" height="6" fill="#2e2010"/>
+  <rect x="1152" y="540" width="116" height="6" fill="#2e2010"/>
+  <!-- Books on shelves -->
+  <rect x="1158" y="80" width="16" height="58" fill="#3a1818" rx="1"/>
+  <rect x="1175" y="90" width="12" height="48" fill="#183018" rx="1"/>
+  <rect x="1188" y="80" width="14" height="58" fill="#182838" rx="1"/>
+  <rect x="1203" y="88" width="18" height="50" fill="#2a1818" rx="1"/>
+  <rect x="1222" y="80" width="12" height="58" fill="#1a1a30" rx="1"/>
+  <rect x="1235" y="92" width="22" height="46" fill="#301818" rx="1"/>
+  <!-- Second shelf -->
+  <rect x="1158" y="152" width="18" height="86" fill="#182020" rx="1"/>
+  <rect x="1177" y="155" width="12" height="83" fill="#2a2818" rx="1"/>
+  <rect x="1190" y="150" width="16" height="88" fill="#1a1828" rx="1"/>
+  <rect x="1207" y="154" width="20" height="84" fill="#281818" rx="1"/>
+  <rect x="1228" y="152" width="14" height="86" fill="#182018" rx="1"/>
+  <rect x="1243" y="157" width="14" height="81" fill="#201828" rx="1"/>
+
+  <!-- ── ARMCHAIR (right side) ── -->
+  <rect x="1120" y="680" width="120" height="60" rx="6" fill="#1e1808" stroke="#2e2010" stroke-width="2"/>
+  <rect x="1108" y="650" width="28" height="100" rx="4" fill="#1a1608" stroke="#2e2010" stroke-width="1.5"/>
+  <rect x="1204" y="650" width="28" height="100" rx="4" fill="#1a1608" stroke="#2e2010" stroke-width="1.5"/>
+  <rect x="1110" y="620" width="130" height="64" rx="6" fill="#231d0c" stroke="#2e2010" stroke-width="2"/>
+
+  <!-- ── CANDELABRA on mantel ── -->
+  <!-- Two candles on mantel shelf -->
+  <rect x="798" y="408" width="6" height="22" fill="#d4c48a"/>
+  <ellipse cx="801" cy="407" rx="4" ry="5" fill="#c89b4e" opacity="0.7"/>
+  <line x1="801" y1="402" x2="801" y2="398" stroke="#c89b4e" stroke-width="1.5" opacity="0.6"/>
+  <rect x="992" y="408" width="6" height="22" fill="#d4c48a"/>
+  <ellipse cx="995" cy="407" rx="4" ry="5" fill="#c89b4e" opacity="0.7"/>
+  <line x1="995" y1="402" x2="995" y2="398" stroke="#c89b4e" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- ── DESK LAMP (oil lamp on desk) ── -->
+  <rect x="890" y="490" width="12" height="46" fill="#3a3020" stroke="#5a5030" stroke-width="1"/>
+  <ellipse cx="896" cy="489" rx="18" ry="8" fill="#3a2a18" stroke="#5a4a28" stroke-width="1.5"/>
+  <ellipse cx="896" cy="482" rx="12" ry="10" fill="#1a1208" stroke="#4a4030" stroke-width="1"/>
+  <!-- Lamp glow -->
+  <ellipse cx="896" cy="475" rx="6" ry="4" fill="#c89b4e" opacity="0.6"/>
+  <line x1="896" y1="470" x2="896" y2="465" stroke="#c89b4e" stroke-width="1" opacity="0.5"/>
+
+  <!-- ── LIGHTING OVERLAYS ── -->
+  <!-- Room atmosphere -->
+  <rect x="0" y="0" width="1600" height="900" fill="url(#roomLight)" opacity="0.75"/>
+  <!-- Fireplace warm glow -->
+  <rect x="0" y="0" width="1600" height="900" fill="url(#fireplaceGlow)" opacity="0.6"/>
+  <!-- Desk lamp glow -->
+  <rect x="0" y="0" width="1600" height="900" fill="url(#deskLamp)" opacity="0.5"/>
+
+  <!-- ── LIGHTNING STORM — Window glow ── -->
+  <rect x="470" y="50" width="260" height="380" fill="#a8b8c8" opacity="0.07"/>
+
+  <!-- ── GRAIN OVERLAY ── -->
+  <rect x="0" y="0" width="1600" height="900" fill="#3a2810" opacity="0.08" filter="url(#grain)"/>
+
+  <!-- ── SCENE HUD: Forensic overlay markers (very subtle) ── -->
+  <!-- Corner bracket markers typical of crime scene photography -->
+  <g opacity="0.25" stroke="#c89b4e" stroke-width="1.5" fill="none">
+    <path d="M20 20 L20 40 M20 20 L40 20"/>
+    <path d="M1580 20 L1580 40 M1580 20 L1560 20"/>
+    <path d="M20 880 L20 860 M20 880 L40 880"/>
+    <path d="M1580 880 L1580 860 M1580 880 L1560 880"/>
+  </g>
+
+  <!-- Scene label -->
+  <text x="1570" y="895" font-family="monospace" font-size="8" fill="#c89b4e" opacity="0.45" text-anchor="end">BLACKWOOD MANOR · LORD'S STUDY · OCT. 1898</text>
+  <text x="30" y="895" font-family="monospace" font-size="8" fill="#c89b4e" opacity="0.45">CRIME SCENE DOCUMENTATION // CASEZERO FILE CZ-002</text>
+</svg>

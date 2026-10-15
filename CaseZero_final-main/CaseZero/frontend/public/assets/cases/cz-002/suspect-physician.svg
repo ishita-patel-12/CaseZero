@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <defs>
+    <radialGradient id="bgP" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#b8ad92"/>
+      <stop offset="100%" stop-color="#7c6e54"/>
+    </radialGradient>
+    <filter id="grnP">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="b"/>
+      <feComposite in="b" in2="SourceGraphic" operator="in"/>
+    </filter>
+    <radialGradient id="vigP" cx="50%" cy="50%" r="70%">
+      <stop offset="50%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#2c2214" stop-opacity="0.85"/>
+    </radialGradient>
+  </defs>
+  <!-- Aged background -->
+  <rect width="400" height="500" fill="url(#bgP)"/>
+  <rect width="400" height="500" fill="url(#vigP)"/>
+
+  <!-- Body / attire: Victorian physician dark wool frock coat, waistcoat -->
+  <ellipse cx="200" cy="450" rx="145" ry="90" fill="#141818"/>
+  <rect x="120" y="325" width="160" height="150" rx="15" fill="#1c2020"/>
+  <!-- Dark waistcoat and stiff wing collar -->
+  <path d="M150 325 L200 420 L250 325 Z" fill="#24221c"/>
+  <path d="M175 305 L200 325 L225 305 L215 335 L185 335 Z" fill="#e2d8c4"/>
+  <!-- Dark ascot / cravat -->
+  <path d="M192 325 L208 325 L204 365 L196 365 Z" fill="#121010"/>
+  <circle cx="200" cy="335" r="2.5" fill="#c89b4e"/>
+
+  <!-- Head -->
+  <ellipse cx="200" cy="215" rx="66" ry="82" fill="#c6a682"/>
+  <!-- Hair — grey/silver parted hair -->
+  <ellipse cx="200" cy="155" rx="70" ry="40" fill="#4a4c50"/>
+  <path d="M130 195 Q130 150 160 140 Q200 135 240 142 Q270 152 270 195 Q265 170 240 155 Q200 150 160 155 Q135 170 130 195" fill="#62666a"/>
+  <!-- Sideburns -->
+  <rect x="132" y="190" width="10" height="35" rx="3" fill="#525458"/>
+  <rect x="258" y="190" width="10" height="35" rx="3" fill="#525458"/>
+
+  <!-- Ears -->
+  <ellipse cx="132" cy="218" rx="8" ry="14" fill="#b89570"/>
+  <ellipse cx="268" cy="218" rx="8" ry="14" fill="#b89570"/>
+
+  <!-- Forehead worry lines -->
+  <path d="M168 175 Q200 170 232 175" fill="none" stroke="#9a7a58" stroke-width="1.2" opacity="0.6"/>
+  <path d="M172 182 Q200 178 228 182" fill="none" stroke="#9a7a58" stroke-width="1.2" opacity="0.6"/>
+
+  <!-- Eyes & Spectacles (round wire-rimmed pince-nez) -->
+  <ellipse cx="174" cy="212" rx="11" ry="8" fill="#201812"/>
+  <ellipse cx="226" cy="212" rx="11" ry="8" fill="#201812"/>
+  <circle cx="174" cy="212" r="5" fill="#203525"/>
+  <circle cx="226" cy="212" r="5" fill="#203525"/>
+  <circle cx="176" cy="210" r="1.5" fill="#e8e8e8"/>
+  <circle cx="228" cy="210" r="1.5" fill="#e8e8e8"/>
+
+  <!-- Wire-rim spectacles -->
+  <circle cx="174" cy="212" r="15" fill="none" stroke="#b09650" stroke-width="1.6"/>
+  <circle cx="226" cy="212" r="15" fill="none" stroke="#b09650" stroke-width="1.6"/>
+  <path d="M189 210 Q200 206 211 210" fill="none" stroke="#b09650" stroke-width="1.5"/>
+
+  <!-- Eyebrows — bushy grey -->
+  <path d="M160 198 Q175 192 190 197" fill="none" stroke="#525458" stroke-width="3" stroke-linecap="round"/>
+  <path d="M210 197 Q225 192 240 198" fill="none" stroke="#525458" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Nose -->
+  <path d="M197 212 L195 238 L204 238" fill="none" stroke="#9a7550" stroke-width="1.8"/>
+
+  <!-- Victorian handlebar mustache — grey/silver -->
+  <path d="M170 252 Q185 242 200 248 Q215 242 230 252 Q220 262 200 255 Q180 262 170 252 Z" fill="#585c60"/>
+
+  <!-- Mouth / chin line -->
+  <path d="M190 266 Q200 268 210 266" fill="none" stroke="#8a6548" stroke-width="1.5"/>
+
+  <!-- Grain texture overlay -->
+  <rect width="400" height="500" fill="#6a5830" opacity="0.12" filter="url(#grnP)"/>
+  <!-- Damaged corners -->
+  <path d="M0 0 L30 0 L0 30 Z" fill="#2a2012" opacity="0.4"/>
+  <path d="M400 500 L370 500 L400 470 Z" fill="#2a2012" opacity="0.4"/>
+
+  <!-- Bottom title card -->
+  <rect x="0" y="460" width="400" height="40" fill="#14100a" opacity="0.75"/>
+  <text x="200" y="478" font-family="Georgia,serif" font-size="13" fill="#c4b490" text-anchor="middle">DR. SIMON VALE</text>
+  <text x="200" y="494" font-family="monospace" font-size="9" fill="#8a7a5a" text-anchor="middle">Family Physician · Medical Examiner</text>
+</svg>

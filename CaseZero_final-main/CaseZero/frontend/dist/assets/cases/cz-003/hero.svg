@@ -1,0 +1,297 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750">
+  <defs>
+    <radialGradient id="lampGlow" cx="40%" cy="20%" r="45%">
+      <stop offset="0%" stop-color="#f0c840" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#c89b4e" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0a0806" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="roomGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e0c08"/>
+      <stop offset="100%" stop-color="#060504"/>
+    </linearGradient>
+    <linearGradient id="deskGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a2010"/>
+      <stop offset="100%" stop-color="#1a1408"/>
+    </linearGradient>
+    <filter id="lampFilter">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softBlur">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <filter id="smokeFilter">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <radialGradient id="vignette2" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#030201" stop-opacity="0.9"/>
+    </radialGradient>
+    <radialGradient id="paperGrad" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#e8d9b5"/>
+      <stop offset="100%" stop-color="#c9b890"/>
+    </radialGradient>
+    <linearGradient id="wallGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#140f08"/>
+      <stop offset="100%" stop-color="#0a0704"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background / walls -->
+  <rect width="1200" height="750" fill="url(#wallGrad)"/>
+  
+  <!-- Wall texture lines (wainscoting) -->
+  <g stroke="#1a1408" stroke-width="1" opacity="0.6">
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="350" x2="1200" y2="350"/>
+    <rect x="50" y="360" width="150" height="150" stroke-width="1.5" fill="none"/>
+    <rect x="220" y="360" width="150" height="150" stroke-width="1.5" fill="none"/>
+    <rect x="600" y="360" width="150" height="150" stroke-width="1.5" fill="none"/>
+    <rect x="770" y="360" width="150" height="150" stroke-width="1.5" fill="none"/>
+    <rect x="940" y="360" width="150" height="150" stroke-width="1.5" fill="none"/>
+  </g>
+
+  <!-- Lamp glow (top-left area illumination) -->
+  <ellipse cx="480" cy="180" rx="500" ry="380" fill="url(#lampGlow)" filter="url(#lampFilter)"/>
+
+  <!-- Floor -->
+  <rect x="0" y="650" width="1200" height="100" fill="#0d0a05"/>
+  <!-- Floor boards -->
+  <g stroke="#111009" stroke-width="1.5" opacity="0.5">
+    <line x1="0" y1="670" x2="1200" y2="670"/>
+    <line x1="0" y1="695" x2="1200" y2="695"/>
+    <line x1="0" y1="720" x2="1200" y2="720"/>
+    <line x1="200" y1="650" x2="200" y2="750"/>
+    <line x1="500" y1="650" x2="500" y2="750"/>
+    <line x1="800" y1="650" x2="800" y2="750"/>
+    <line x1="1000" y1="650" x2="1000" y2="750"/>
+  </g>
+
+  <!-- Corkboard (right wall) -->
+  <rect x="700" y="60" width="440" height="330" rx="3" fill="#2e2010" opacity="0.8"/>
+  <rect x="703" y="63" width="434" height="324" rx="2" fill="#342512" stroke="#1e1608" stroke-width="2"/>
+  <!-- Corkboard texture lines -->
+  <g stroke="#2a1e0e" stroke-width="0.8" opacity="0.5">
+    <line x1="703" y1="100" x2="1137" y2="100"/>
+    <line x1="703" y1="140" x2="1137" y2="140"/>
+    <line x1="703" y1="180" x2="1137" y2="180"/>
+    <line x1="703" y1="220" x2="1137" y2="220"/>
+    <line x1="703" y1="260" x2="1137" y2="260"/>
+    <line x1="703" y1="300" x2="1137" y2="300"/>
+    <line x1="750" y1="63" x2="750" y2="387"/>
+    <line x1="800" y1="63" x2="800" y2="387"/>
+    <line x1="850" y1="63" x2="850" y2="387"/>
+    <line x1="900" y1="63" x2="900" y2="387"/>
+    <line x1="950" y1="63" x2="950" y2="387"/>
+    <line x1="1000" y1="63" x2="1000" y2="387"/>
+    <line x1="1050" y1="63" x2="1050" y2="387"/>
+    <line x1="1100" y1="63" x2="1100" y2="387"/>
+  </g>
+
+  <!-- Photo pinned to board 1 -->
+  <g transform="rotate(-4, 760, 120)">
+    <rect x="720" y="90" width="120" height="90" fill="#ede5d8" stroke="#c0b090" stroke-width="1.5"/>
+    <rect x="724" y="94" width="112" height="78" fill="#2a2520"/>
+    <!-- Crime scene photo silhouette -->
+    <rect x="724" y="130" width="112" height="42" fill="#1a1510"/>
+    <polygon points="724,130 800,100 836,130" fill="#201a14"/>
+    <!-- Photo pin -->
+    <circle cx="780" cy="93" r="4" fill="#c89b4e"/>
+    <circle cx="780" cy="93" r="2.5" fill="#dfb368"/>
+  </g>
+
+  <!-- Photo pinned to board 2 (suspect) -->
+  <g transform="rotate(3, 900, 110)">
+    <rect x="860" y="80" width="85" height="110" fill="#ede5d8" stroke="#c0b090" stroke-width="1.5"/>
+    <rect x="864" y="84" width="77" height="94" fill="#251f18"/>
+    <!-- Suspect silhouette -->
+    <circle cx="902" cy="110" r="15" fill="#1a1510"/>
+    <path d="M875,178 Q902,145 930,178" fill="#1a1510"/>
+    <!-- Pin -->
+    <circle cx="902" cy="83" r="4" fill="#8b2222"/>
+    <circle cx="902" cy="83" r="2.5" fill="#c03030"/>
+  </g>
+
+  <!-- Clue paper pinned to board -->
+  <g transform="rotate(-2, 1000, 130)">
+    <rect x="970" y="100" width="130" height="90" fill="#e8d9b5" stroke="#b0a078" stroke-width="1.5"/>
+    <text x="977" y="120" font-family="serif" font-size="9" fill="#2a2010">SUSPECT: ALBERT CRANE</text>
+    <line x1="977" y1="127" x2="1095" y2="127" stroke="#2a2010" stroke-width="0.8"/>
+    <text x="977" y="140" font-family="monospace" font-size="8" fill="#3a2810">Motive: Insurance fraud</text>
+    <text x="977" y="153" font-family="monospace" font-size="8" fill="#3a2810">Alibi: Unverified</text>
+    <text x="977" y="166" font-family="monospace" font-size="8" fill="#822727">OPPORTUNITY: HIGH</text>
+    <text x="977" y="183" font-family="serif" font-size="8" fill="#8b2222" font-style="italic">Check pressroom archives</text>
+    <!-- Pin -->
+    <circle cx="1035" cy="103" r="4" fill="#c89b4e"/>
+    <circle cx="1035" cy="103" r="2.5" fill="#dfb368"/>
+  </g>
+
+  <!-- Red string connections between photos -->
+  <line x1="780" y1="150" x2="902" y2="150" stroke="#8b2222" stroke-width="1.5" opacity="0.7" stroke-dasharray="4,2"/>
+  <line x1="902" y1="150" x2="1035" y2="150" stroke="#8b2222" stroke-width="1.5" opacity="0.6" stroke-dasharray="4,2"/>
+  <line x1="780" y1="170" x2="1035" y2="180" stroke="#822727" stroke-width="1" opacity="0.5" stroke-dasharray="3,3"/>
+
+  <!-- Newspaper clipping on board -->
+  <g transform="rotate(5, 770, 290)">
+    <rect x="720" y="250" width="110" height="120" fill="#d8c9a0" stroke="#a09060" stroke-width="1.5"/>
+    <text x="726" y="265" font-family="serif" font-size="9" font-weight="bold" fill="#1a1208">THE HERALD</text>
+    <line x1="726" y1="270" x2="826" y2="270" stroke="#1a1208" stroke-width="1"/>
+    <text x="726" y="283" font-family="serif" font-size="7.5" font-weight="bold" fill="#1a1208">PUBLISHER FOUND</text>
+    <text x="726" y="294" font-family="serif" font-size="7.5" font-weight="bold" fill="#1a1208">DEAD IN PRESSROOM</text>
+    <line x1="726" y1="300" x2="826" y2="300" stroke="#3a3020" stroke-width="0.5"/>
+    <text x="726" y="313" font-family="sans-serif" font-size="6.5" fill="#2a2010">Investigators believe</text>
+    <text x="726" y="325" font-family="sans-serif" font-size="6.5" fill="#2a2010">foul play is involved...</text>
+    <text x="726" y="337" font-family="sans-serif" font-size="6.5" fill="#2a2010">Sources indicate the</text>
+    <text x="726" y="349" font-family="sans-serif" font-size="6.5" fill="#2a2010">victim had documents.</text>
+    <text x="726" y="362" font-family="monospace" font-size="6" fill="#8b2222">SEE PAGE 4A</text>
+    <circle cx="769" cy="253" r="4" fill="#c89b4e"/>
+    <circle cx="769" cy="253" r="2.5" fill="#dfb368"/>
+  </g>
+
+  <!-- Main desk surface -->
+  <rect x="0" y="540" width="700" height="180" fill="url(#deskGrad)"/>
+  <rect x="0" y="538" width="700" height="4" fill="#3a2c18"/>
+  <!-- Desk front -->
+  <rect x="0" y="720" width="700" height="30" fill="#1a1208"/>
+  <!-- Desk legs shadow -->
+  <rect x="50" y="720" width="20" height="30" fill="#100e06"/>
+  <rect x="600" y="720" width="20" height="30" fill="#100e06"/>
+
+  <!-- Desk lamp -->
+  <g opacity="0.95">
+    <!-- Lamp arm -->
+    <line x1="200" y1="538" x2="200" y2="440" stroke="#1a1810" stroke-width="5"/>
+    <line x1="200" y1="440" x2="480" y2="300" stroke="#1a1810" stroke-width="4"/>
+    <line x1="480" y1="300" x2="440" y2="380" stroke="#1a1810" stroke-width="3.5"/>
+    <!-- Lamp shade -->
+    <path d="M400,380 L480,300 L520,380 Z" fill="#2a2010"/>
+    <path d="M395,388 L525,388 L510,375 L410,375 Z" fill="#1a1408"/>
+    <!-- Bulb glow -->
+    <ellipse cx="460" cy="385" rx="30" ry="8" fill="#f0c840" opacity="0.85"/>
+    <circle cx="460" cy="382" r="8" fill="#fff8c0" opacity="0.9"/>
+    <!-- Glow cone on desk -->
+    <path d="M380,540 L460,385 L540,540 Z" fill="#f0c840" opacity="0.07" filter="url(#lampFilter)"/>
+    <ellipse cx="460" cy="550" rx="100" ry="20" fill="#c89b4e" opacity="0.12" filter="url(#softBlur)"/>
+  </g>
+
+  <!-- Typewriter -->
+  <g transform="translate(250, 470)">
+    <!-- Body -->
+    <rect x="0" y="30" width="180" height="70" rx="4" fill="#1a1a14"/>
+    <rect x="5" y="35" width="170" height="60" rx="3" fill="#141410"/>
+    <!-- Keys panel -->
+    <rect x="10" y="40" width="160" height="30" rx="2" fill="#111108"/>
+    <!-- Individual keys -->
+    <g fill="#222218">
+      <rect x="15" y="45" width="12" height="10" rx="1.5"/>
+      <rect x="30" y="45" width="12" height="10" rx="1.5"/>
+      <rect x="45" y="45" width="12" height="10" rx="1.5"/>
+      <rect x="60" y="45" width="12" height="10" rx="1.5"/>
+      <rect x="75" y="45" width="12" height="10" rx="1.5"/>
+      <rect x="90" y="45" width="12" height="10" rx="1.5"/>
+      <rect x="105" y="45" width="12" height="10" rx="1.5"/>
+      <rect x="120" y="45" width="12" height="10" rx="1.5"/>
+      <rect x="135" y="45" width="12" height="10" rx="1.5"/>
+      <rect x="150" y="45" width="12" height="10" rx="1.5"/>
+      <rect x="18" y="59" width="12" height="10" rx="1.5"/>
+      <rect x="33" y="59" width="12" height="10" rx="1.5"/>
+      <rect x="48" y="59" width="12" height="10" rx="1.5"/>
+      <rect x="63" y="59" width="12" height="10" rx="1.5"/>
+      <rect x="78" y="59" width="12" height="10" rx="1.5"/>
+      <rect x="93" y="59" width="12" height="10" rx="1.5"/>
+      <rect x="108" y="59" width="12" height="10" rx="1.5"/>
+      <rect x="123" y="59" width="12" height="10" rx="1.5"/>
+      <rect x="138" y="59" width="12" height="10" rx="1.5"/>
+    </g>
+    <!-- Paper roll -->
+    <rect x="20" y="0" width="140" height="4" fill="#2a2820"/>
+    <rect x="15" y="-40" width="150" height="60" fill="#ede5d8" opacity="0.9"/>
+    <!-- Typed text on paper -->
+    <text x="20" y="-30" font-family="monospace" font-size="6" fill="#1a1208">INVESTIGATION REPORT - ALDERMERE PRESS</text>
+    <text x="20" y="-21" font-family="monospace" font-size="6" fill="#1a1208">DATE: OCT 28 — TIME: 22:45</text>
+    <text x="20" y="-12" font-family="monospace" font-size="6" fill="#1a1208">VICTIM: EDGAR THORNE, PUBLISHER</text>
+    <text x="20" y="-3" font-family="monospace" font-size="6" fill="#822727">CAUSE: BLUNT FORCE — AWAITING LAB_</text>
+    <!-- Paper roller bar -->
+    <rect x="15" y="4" width="150" height="8" rx="2" fill="#1c1c18"/>
+  </g>
+
+  <!-- Scattered papers on desk -->
+  <g transform="rotate(3, 120, 590)">
+    <rect x="60" y="545" width="130" height="90" fill="#e0d0a8" opacity="0.95" stroke="#c0b080" stroke-width="1"/>
+    <text x="68" y="562" font-family="serif" font-size="8" font-weight="bold" fill="#1a1208">WITNESS STATEMENT</text>
+    <line x1="68" y1="568" x2="182" y2="568" stroke="#1a1208" stroke-width="0.8"/>
+    <text x="68" y="580" font-family="monospace" font-size="6.5" fill="#2a2010">"I heard shouting from</text>
+    <text x="68" y="591" font-family="monospace" font-size="6.5" fill="#2a2010">the pressroom at approx.</text>
+    <text x="68" y="602" font-family="monospace" font-size="6.5" fill="#2a2010">22:15. Someone left in</text>
+    <text x="68" y="613" font-family="monospace" font-size="6.5" fill="#2a2010">a black motor car."</text>
+    <text x="68" y="627" font-family="monospace" font-size="6" fill="#822727" font-style="italic">- D. Ferris, Typesetter</text>
+  </g>
+  
+  <g transform="rotate(-5, 600, 560)">
+    <rect x="500" y="545" width="150" height="110" fill="#ddd0a0" opacity="0.9" stroke="#b8a870" stroke-width="1"/>
+    <text x="508" y="565" font-family="serif" font-size="9" font-weight="bold" fill="#1a1208">PRIVATE LEDGER</text>
+    <line x1="508" y1="572" x2="642" y2="572" stroke="#2a2010" stroke-width="0.8"/>
+    <text x="508" y="585" font-family="monospace" font-size="7" fill="#2a2010">Oct 24 ... £840 (CRANE)</text>
+    <text x="508" y="598" font-family="monospace" font-size="7" fill="#2a2010">Oct 26 ... £2,400 (?)</text>
+    <text x="508" y="611" font-family="monospace" font-size="7" fill="#822727">Oct 28 ... REDACTED</text>
+    <text x="508" y="624" font-family="monospace" font-size="7" fill="#2a2010">Nov 01 ... PENDING</text>
+    <text x="508" y="648" font-family="monospace" font-size="6" fill="#3a2010" font-style="italic">Confirm with accounts</text>
+  </g>
+
+  <!-- Ashtray with cigarette -->
+  <g transform="translate(430, 540)">
+    <ellipse cx="0" cy="15" rx="25" ry="8" fill="#1a1810"/>
+    <ellipse cx="0" cy="13" rx="22" ry="6" fill="#141410"/>
+    <ellipse cx="0" cy="12" rx="18" ry="4" fill="#1e1c14"/>
+    <!-- Cigarette -->
+    <rect x="-5" y="-10" width="40" height="6" rx="2" fill="#ede5d8" transform="rotate(-20, 20, 5)"/>
+    <rect x="30" y="-20" width="8" height="6" rx="2" fill="#f0a030" opacity="0.7" transform="rotate(-20, 34, -17)"/>
+    <!-- Smoke wisps -->
+    <path d="M32,-25 Q28,-40 35,-55 Q29,-70 36,-85" stroke="#ede5d8" stroke-width="1.5" fill="none" opacity="0.2" filter="url(#smokeFilter)"/>
+    <path d="M35,-28 Q40,-42 33,-58 Q38,-73 31,-88" stroke="#ede5d8" stroke-width="1" fill="none" opacity="0.15" filter="url(#smokeFilter)"/>
+  </g>
+
+  <!-- Rotary telephone -->
+  <g transform="translate(55, 545)">
+    <rect x="0" y="20" width="100" height="50" rx="8" fill="#151510"/>
+    <ellipse cx="50" cy="25" rx="42" ry="15" fill="#1a1a14"/>
+    <!-- Dial -->
+    <circle cx="65" cy="38" r="18" fill="#111108" stroke="#0a0a08" stroke-width="2"/>
+    <circle cx="65" cy="38" r="13" fill="#0e0e0c"/>
+    <circle cx="65" cy="38" r="4" fill="#1a1a14"/>
+    <!-- Dial holes -->
+    <circle cx="65" cy="25" r="2.5" fill="#0a0a08"/>
+    <circle cx="76" cy="28" r="2.5" fill="#0a0a08"/>
+    <circle cx="78" cy="38" r="2.5" fill="#0a0a08"/>
+    <circle cx="75" cy="49" r="2.5" fill="#0a0a08"/>
+    <circle cx="65" cy="52" r="2.5" fill="#0a0a08"/>
+    <circle cx="55" cy="49" r="2.5" fill="#0a0a08"/>
+    <circle cx="52" cy="38" r="2.5" fill="#0a0a08"/>
+    <circle cx="55" cy="28" r="2.5" fill="#0a0a08"/>
+    <!-- Handset -->
+    <path d="M15,25 Q10,10 5,5 Q15,0 22,10 Q25,18 20,25 Z" fill="#1a1a14"/>
+    <path d="M18,60 Q12,70 10,78 Q20,82 28,72 Q30,65 25,58 Z" fill="#1a1a14"/>
+    <path d="M15,25 Q18,40 18,55 Q18,58 15,60" stroke="#222218" stroke-width="4" fill="none"/>
+  </g>
+
+  <!-- Empty coffee cup -->
+  <g transform="translate(370, 545)">
+    <ellipse cx="22" cy="45" rx="18" ry="5" fill="#1a1408"/>
+    <path d="M6,15 L4,45 L40,45 L38,15 Z" fill="#2a2010"/>
+    <ellipse cx="22" cy="15" rx="16" ry="4" fill="#3a2c18"/>
+    <ellipse cx="22" cy="16" rx="14" ry="3" fill="#0a0804" opacity="0.8"/>
+    <!-- Handle -->
+    <path d="M38,25 Q52,25 52,35 Q52,45 38,42" stroke="#2a2010" stroke-width="4" fill="none"/>
+  </g>
+
+  <!-- Shadow figure silhouette through frosted glass door (background) -->
+  <rect x="0" y="150" width="5" height="450" fill="#0d0a05"/>
+  <rect x="0" y="150" width="200" height="350" fill="#0e0b06" opacity="0.6"/>
+
+  <!-- Vignette -->
+  <rect width="1200" height="750" fill="url(#vignette2)"/>
+  
+  <!-- Classification text -->
+  <text x="60" y="50" font-family="monospace" font-size="11" fill="#c89b4e" opacity="0.7" letter-spacing="4">CZ-003 // CLASSIFIED EXHIBIT // THE ALDERMERE HERALD INVESTIGATION</text>
+  <text x="60" y="70" font-family="monospace" font-size="10" fill="#ede5d8" opacity="0.35" letter-spacing="2">EVIDENCE PHOTOGRAPHY - DO NOT REMOVE FROM INVESTIGATION FILE</text>
+</svg>

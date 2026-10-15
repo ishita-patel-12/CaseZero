@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <defs>
+    <radialGradient id="bgN" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#c6bba0"/>
+      <stop offset="100%" stop-color="#827458"/>
+    </radialGradient>
+    <filter id="grnN">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="b"/>
+      <feComposite in="b" in2="SourceGraphic" operator="in"/>
+    </filter>
+    <radialGradient id="vigN" cx="50%" cy="50%" r="70%">
+      <stop offset="50%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#2a1e12" stop-opacity="0.84"/>
+    </radialGradient>
+  </defs>
+  <!-- Aged background -->
+  <rect width="400" height="500" fill="url(#bgN)"/>
+  <rect width="400" height="500" fill="url(#vigN)"/>
+
+  <!-- Body / attire: Victorian young lady plum / burgundy velvet day bodice -->
+  <ellipse cx="200" cy="445" rx="130" ry="80" fill="#24141e"/>
+  <rect x="130" y="325" width="140" height="150" rx="16" fill="#321b28"/>
+  <!-- Square-cut neckline with ivory lace trim -->
+  <path d="M160 325 L240 325 L230 365 L170 365 Z" fill="#c6a682"/>
+  <path d="M158 322 L242 322 L240 330 L160 330 Z" fill="#eae2d2"/>
+  <path d="M160 328 Q170 332 180 328 Q190 332 200 328 Q210 332 220 328 Q230 332 240 328" fill="none" stroke="#baae9a" stroke-width="0.8"/>
+  <!-- Delicate gold pendant locket -->
+  <line x1="185" y1="324" x2="200" y2="348" stroke="#cca44c" stroke-width="0.9"/>
+  <line x1="215" y1="324" x2="200" y2="348" stroke="#cca44c" stroke-width="0.9"/>
+  <ellipse cx="200" cy="350" rx="4.5" ry="6" fill="#cca44c" stroke="#9a7428" stroke-width="0.6"/>
+
+  <!-- Head -->
+  <ellipse cx="200" cy="220" rx="63" ry="76" fill="#cba884"/>
+
+  <!-- Hair — chestnut brown with soft curls, velvet ribbon -->
+  <ellipse cx="200" cy="162" rx="72" ry="46" fill="#3a2216"/>
+  <path d="M130 195 Q125 150 155 138 Q200 132 245 138 Q275 150 270 195 Q265 160 235 150 Q200 144 165 150 Q135 160 130 195" fill="#4e2e1e"/>
+  <!-- Side ringlets framing temples -->
+  <path d="M135 190 Q128 220 135 240" fill="none" stroke="#3a2216" stroke-width="4" stroke-linecap="round"/>
+  <path d="M265 190 Q272 220 265 240" fill="none" stroke="#3a2216" stroke-width="4" stroke-linecap="round"/>
+  <!-- Dark velvet hair ribbon -->
+  <path d="M155 148 Q200 142 245 148" fill="none" stroke="#1c0f18" stroke-width="4.5"/>
+  <circle cx="200" cy="144" r="5" fill="#24141e"/>
+
+  <!-- Ears -->
+  <ellipse cx="134" cy="224" rx="7.5" ry="12" fill="#b89572"/>
+  <ellipse cx="266" cy="224" rx="7.5" ry="12" fill="#b89572"/>
+  <!-- Delicate pearl drop earrings -->
+  <circle cx="134" cy="238" r="3.5" fill="#eae4d6" stroke="#9a8c78" stroke-width="0.5"/>
+  <circle cx="266" cy="238" r="3.5" fill="#eae4d6" stroke="#9a8c78" stroke-width="0.5"/>
+
+  <!-- Eyes — wide, slightly guarded / anxious, dark blue -->
+  <ellipse cx="174" cy="214" rx="11" ry="8" fill="#1e1814"/>
+  <ellipse cx="226" cy="214" rx="11" ry="8" fill="#1e1814"/>
+  <circle cx="174" cy="214" r="5.2" fill="#26384a"/>
+  <circle cx="226" cy="214" r="5.2" fill="#26384a"/>
+  <circle cx="176" cy="212" r="1.5" fill="#ffffff"/>
+  <circle cx="228" cy="212" r="1.5" fill="#ffffff"/>
+
+  <!-- Eyebrows — fine, slightly raised inner edges (worried expression) -->
+  <path d="M160 203 Q174 199 187 203" fill="none" stroke="#362016" stroke-width="2" stroke-linecap="round"/>
+  <path d="M213 203 Q226 199 240 203" fill="none" stroke="#362016" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Nose — delicate, small straight bridge -->
+  <path d="M198 214 L197 238 L203 238" fill="none" stroke="#9e7652" stroke-width="1.5"/>
+
+  <!-- Mouth — delicate soft rose lips -->
+  <path d="M185 256 Q200 258 215 256" fill="none" stroke="#8a443e" stroke-width="2" stroke-linecap="round"/>
+  <path d="M187 256 Q200 252 213 256" fill="#c66860" opacity="0.6"/>
+
+  <!-- Grain texture overlay -->
+  <rect width="400" height="500" fill="#665230" opacity="0.12" filter="url(#grnN)"/>
+  <!-- Damaged corners -->
+  <path d="M0 0 L30 0 L0 30 Z" fill="#241a0e" opacity="0.4"/>
+  <path d="M400 500 L370 500 L400 470 Z" fill="#241a0e" opacity="0.4"/>
+
+  <!-- Bottom title card -->
+  <rect x="0" y="460" width="400" height="40" fill="#120e0a" opacity="0.8"/>
+  <text x="200" y="478" font-family="Georgia,serif" font-size="13" fill="#c4b490" text-anchor="middle">CLARA BLACKWOOD</text>
+  <text x="200" y="494" font-family="monospace" font-size="9" fill="#8a7a5a" text-anchor="middle">Lord Reginald's Niece · Former Beneficiary</text>
+</svg>

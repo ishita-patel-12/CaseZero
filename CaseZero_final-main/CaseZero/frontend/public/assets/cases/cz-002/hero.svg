@@ -1,0 +1,303 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750">
+  <defs>
+    <radialGradient id="moonGlow" cx="72%" cy="18%" r="25%">
+      <stop offset="0%" stop-color="#e8d5a0" stop-opacity="0.6"/>
+      <stop offset="40%" stop-color="#c8a855" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0a0806" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="fogGrad" cx="50%" cy="80%" r="60%">
+      <stop offset="0%" stop-color="#2a2418" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0a0806" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#050403"/>
+      <stop offset="50%" stop-color="#0e0c09"/>
+      <stop offset="100%" stop-color="#1a1610"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1610"/>
+      <stop offset="100%" stop-color="#0a0806"/>
+    </linearGradient>
+    <linearGradient id="manorWall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a251c"/>
+      <stop offset="100%" stop-color="#18150f"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="fog">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+    <clipPath id="mainClip">
+      <rect width="1200" height="750"/>
+    </clipPath>
+  </defs>
+  
+  <!-- Sky -->
+  <rect width="1200" height="750" fill="url(#sky)"/>
+  
+  <!-- Moon -->
+  <circle cx="870" cy="135" r="65" fill="#f0d878" opacity="0.15" filter="url(#softGlow)"/>
+  <circle cx="870" cy="135" r="45" fill="#e8d070" opacity="0.25" filter="url(#glow)"/>
+  <circle cx="870" cy="135" r="30" fill="#f4e090"/>
+  
+  <!-- Moon glow overlay -->
+  <circle cx="870" cy="135" r="180" fill="url(#moonGlow)"/>
+  
+  <!-- Stars -->
+  <g fill="#ede0b8" opacity="0.6">
+    <circle cx="120" cy="80" r="1.2"/>
+    <circle cx="234" cy="45" r="1"/>
+    <circle cx="340" cy="90" r="1.4"/>
+    <circle cx="450" cy="30" r="0.8"/>
+    <circle cx="560" cy="70" r="1.1"/>
+    <circle cx="650" cy="55" r="0.9"/>
+    <circle cx="720" cy="20" r="1.3"/>
+    <circle cx="980" cy="60" r="1"/>
+    <circle cx="1050" cy="35" r="1.2"/>
+    <circle cx="1110" cy="80" r="0.9"/>
+    <circle cx="1160" cy="45" r="1.1"/>
+    <circle cx="90" cy="160" r="0.8"/>
+    <circle cx="180" cy="140" r="1.1"/>
+    <circle cx="410" cy="150" r="0.9"/>
+    <circle cx="520" cy="120" r="1"/>
+    <circle cx="780" cy="165" r="0.7"/>
+    <circle cx="1020" cy="145" r="1.1"/>
+  </g>
+
+  <!-- Clouds (dark, moody) -->
+  <g opacity="0.5">
+    <ellipse cx="300" cy="100" rx="180" ry="55" fill="#1a1610"/>
+    <ellipse cx="200" cy="90" rx="120" ry="45" fill="#151209"/>
+    <ellipse cx="500" cy="140" rx="200" ry="60" fill="#1a1610"/>
+    <ellipse cx="650" cy="120" rx="160" ry="50" fill="#130f09"/>
+    <ellipse cx="1050" cy="110" rx="200" ry="65" fill="#1a1610"/>
+  </g>
+
+  <!-- Bare trees (left) -->
+  <g stroke="#0f0d09" stroke-width="2.5" fill="none" opacity="0.9">
+    <line x1="80" y1="750" x2="80" y2="380"/>
+    <line x1="80" y1="500" x2="30" y2="420"/>
+    <line x1="80" y1="460" x2="140" y2="390"/>
+    <line x1="80" y1="430" x2="40" y2="370"/>
+    <line x1="80" y1="410" x2="115" y2="355"/>
+    <line x1="30" y1="420" x2="10" y2="390"/>
+    <line x1="30" y1="420" x2="50" y2="400"/>
+    <line x1="140" y1="390" x2="160" y2="365"/>
+    <line x1="140" y1="390" x2="125" y2="370"/>
+  </g>
+  <g stroke="#130f09" stroke-width="2" fill="none" opacity="0.7">
+    <line x1="160" y1="750" x2="155" y2="430"/>
+    <line x1="155" y1="550" x2="110" y2="470"/>
+    <line x1="155" y1="510" x2="200" y2="450"/>
+    <line x1="155" y1="480" x2="120" y2="430"/>
+    <line x1="110" y1="470" x2="85" y2="445"/>
+    <line x1="200" y1="450" x2="225" y2="420"/>
+  </g>
+
+  <!-- Bare trees (right) -->
+  <g stroke="#0f0d09" stroke-width="2.5" fill="none" opacity="0.9">
+    <line x1="1120" y1="750" x2="1120" y2="360"/>
+    <line x1="1120" y1="490" x2="1170" y2="410"/>
+    <line x1="1120" y1="450" x2="1065" y2="375"/>
+    <line x1="1120" y1="415" x2="1155" y2="360"/>
+    <line x1="1170" y1="410" x2="1190" y2="385"/>
+    <line x1="1065" y1="375" x2="1045" y2="350"/>
+    <line x1="1065" y1="375" x2="1080" y2="350"/>
+  </g>
+  <g stroke="#130f09" stroke-width="2" fill="none" opacity="0.7">
+    <line x1="1040" y1="750" x2="1045" y2="420"/>
+    <line x1="1045" y1="560" x2="1090" y2="480"/>
+    <line x1="1045" y1="510" x2="995" y2="445"/>
+    <line x1="1045" y1="470" x2="1075" y2="430"/>
+    <line x1="1090" y1="480" x2="1110" y2="455"/>
+    <line x1="995" y1="445" x2="975" y2="420"/>
+  </g>
+
+  <!-- Manor foundation / ground -->
+  <rect x="0" y="620" width="1200" height="130" fill="url(#ground)"/>
+  
+  <!-- Fog layer (ground level) -->
+  <rect x="0" y="580" width="1200" height="120" fill="#1a1610" opacity="0.6" filter="url(#fog)"/>
+  <rect x="0" y="650" width="1200" height="100" fill="#12100c" opacity="0.8" filter="url(#fog)"/>
+
+  <!-- Main Manor Body -->
+  <!-- Center wing -->
+  <rect x="380" y="290" width="440" height="340" fill="url(#manorWall)"/>
+  <!-- Left wing -->
+  <rect x="230" y="370" width="200" height="260" fill="#211d16"/>
+  <!-- Right wing -->
+  <rect x="770" y="370" width="200" height="260" fill="#211d16"/>
+
+  <!-- Roof - center -->
+  <polygon points="380,290 600,160 820,290" fill="#161310"/>
+  <!-- Roof - left wing -->
+  <polygon points="230,370 330,270 430,370" fill="#130f0c"/>
+  <!-- Roof - right wing -->  
+  <polygon points="770,370 870,270 970,370" fill="#130f0c"/>
+
+  <!-- Central tower -->
+  <rect x="545" y="200" width="110" height="100" fill="#2a2418"/>
+  <polygon points="545,200 600,120 655,200" fill="#1a1610"/>
+  
+  <!-- Chimneys -->
+  <rect x="490" y="155" width="24" height="70" fill="#1c1814"/>
+  <rect x="686" y="155" width="24" height="70" fill="#1c1814"/>
+  <rect x="270" y="240" width="20" height="60" fill="#1c1814"/>
+  <rect x="910" y="240" width="20" height="60" fill="#1c1814"/>
+
+  <!-- Battlements/crenellations on center tower -->
+  <g fill="#1a1610">
+    <rect x="545" y="195" width="15" height="15"/>
+    <rect x="570" y="195" width="15" height="15"/>
+    <rect x="595" y="195" width="15" height="15"/>
+    <rect x="620" y="195" width="15" height="15"/>
+    <rect x="645" y="195" width="15" height="15"/>
+  </g>
+
+  <!-- Windows - center wing (lit with warm glow) -->
+  <!-- Row 1 -->
+  <g>
+    <!-- Left window group -->
+    <rect x="410" y="320" width="55" height="80" fill="#0a0806"/>
+    <rect x="413" y="323" width="24" height="74" fill="#c89b4e" opacity="0.25"/>
+    <rect x="439" y="323" width="23" height="74" fill="#c89b4e" opacity="0.15"/>
+    <rect x="410" y="320" width="55" height="80" stroke="#1c1814" stroke-width="3" fill="none"/>
+    <!-- arch -->
+    <path d="M410,320 Q437,295 465,320" fill="#0a0806"/>
+    
+    <!-- Center window (brighter) -->
+    <rect x="572" y="320" width="55" height="80" fill="#0a0806"/>
+    <rect x="575" y="323" width="24" height="74" fill="#e8b060" opacity="0.4"/>
+    <rect x="601" y="323" width="23" height="74" fill="#c89b4e" opacity="0.3"/>
+    <rect x="572" y="320" width="55" height="80" stroke="#1c1814" stroke-width="3" fill="none"/>
+    <path d="M572,320 Q599,295 627,320" fill="#0a0806"/>
+    
+    <!-- Right window -->
+    <rect x="734" y="320" width="55" height="80" fill="#0a0806"/>
+    <rect x="737" y="323" width="24" height="74" fill="#c89b4e" opacity="0.2"/>
+    <rect x="763" y="323" width="23" height="74" fill="#c89b4e" opacity="0.1"/>
+    <rect x="734" y="320" width="55" height="80" stroke="#1c1814" stroke-width="3" fill="none"/>
+    <path d="M734,320 Q761,295 789,320" fill="#0a0806"/>
+  </g>
+  
+  <!-- Row 2 windows -->
+  <g>
+    <rect x="430" y="440" width="48" height="65" fill="#0a0806"/>
+    <rect x="433" y="443" width="20" height="59" fill="#c89b4e" opacity="0.12"/>
+    <rect x="455" y="443" width="20" height="59" fill="#c89b4e" opacity="0.08"/>
+    <rect x="430" y="440" width="48" height="65" stroke="#1c1814" stroke-width="2.5" fill="none"/>
+
+    <rect x="577" y="440" width="48" height="65" fill="#0a0806"/>
+    <rect x="580" y="443" width="20" height="59" fill="#e8b060" opacity="0.3"/>
+    <rect x="602" y="443" width="20" height="59" fill="#c89b4e" opacity="0.2"/>
+    <rect x="577" y="440" width="48" height="65" stroke="#1c1814" stroke-width="2.5" fill="none"/>
+    
+    <rect x="724" y="440" width="48" height="65" fill="#0a0806"/>
+    <rect x="727" y="443" width="20" height="59" fill="#c89b4e" opacity="0.1"/>
+    <rect x="749" y="443" width="20" height="59" fill="#0a0806"/>
+    <rect x="724" y="440" width="48" height="65" stroke="#1c1814" stroke-width="2.5" fill="none"/>
+  </g>
+
+  <!-- Windows - wings -->
+  <g>
+    <!-- Left wing windows -->
+    <rect x="262" y="405" width="44" height="60" fill="#0a0806"/>
+    <rect x="265" y="408" width="17" height="54" fill="#c89b4e" opacity="0.15"/>
+    <rect x="284" y="408" width="18" height="54" fill="#0a0806"/>
+    <rect x="262" y="405" width="44" height="60" stroke="#1c1814" stroke-width="2" fill="none"/>
+    
+    <rect x="342" y="405" width="44" height="60" fill="#0a0806"/>
+    <rect x="345" y="408" width="17" height="54" fill="#c89b4e" opacity="0.25"/>
+    <rect x="364" y="408" width="18" height="54" fill="#c89b4e" opacity="0.15"/>
+    <rect x="342" y="405" width="44" height="60" stroke="#1c1814" stroke-width="2" fill="none"/>
+
+    <!-- Right wing windows -->
+    <rect x="813" y="405" width="44" height="60" fill="#0a0806"/>
+    <rect x="816" y="408" width="17" height="54" fill="#c89b4e" opacity="0.2"/>
+    <rect x="835" y="408" width="18" height="54" fill="#c89b4e" opacity="0.12"/>
+    <rect x="813" y="405" width="44" height="60" stroke="#1c1814" stroke-width="2" fill="none"/>
+    
+    <rect x="892" y="405" width="44" height="60" fill="#0a0806"/>
+    <rect x="895" y="408" width="17" height="54" fill="#0a0806"/>
+    <rect x="914" y="408" width="18" height="54" fill="#c89b4e" opacity="0.1"/>
+    <rect x="892" y="405" width="44" height="60" stroke="#1c1814" stroke-width="2" fill="none"/>
+  </g>
+
+  <!-- Tower window (lit) -->
+  <rect x="572" y="225" width="56" height="55" fill="#0a0806"/>
+  <rect x="575" y="228" width="23" height="49" fill="#e8b060" opacity="0.55"/>
+  <rect x="600" y="228" width="24" height="49" fill="#c89b4e" opacity="0.4"/>
+  <rect x="572" y="225" width="56" height="55" stroke="#1c1814" stroke-width="3" fill="none"/>
+  <path d="M572,225 Q600,200 628,225" fill="#0a0806"/>
+
+  <!-- Main entrance door & portico -->
+  <rect x="560" y="530" width="80" height="100" fill="#0e0c09"/>
+  <path d="M560,530 Q600,495 640,530" fill="#0e0c09"/>
+  <!-- Door frame -->
+  <rect x="556" y="527" width="88" height="103" stroke="#2a2218" stroke-width="4" fill="none"/>
+  <!-- Door panels -->
+  <rect x="565" y="535" width="30" height="40" stroke="#1a1610" stroke-width="1.5" fill="#0a0806"/>
+  <rect x="605" y="535" width="30" height="40" stroke="#1a1610" stroke-width="1.5" fill="#0a0806"/>
+  <rect x="565" y="582" width="30" height="40" stroke="#1a1610" stroke-width="1.5" fill="#0a0806"/>
+  <rect x="605" y="582" width="30" height="40" stroke="#1a1610" stroke-width="1.5" fill="#0a0806"/>
+  <!-- Door knob -->
+  <circle cx="600" cy="588" r="4" fill="#c89b4e" opacity="0.8"/>
+  
+  <!-- Steps -->
+  <rect x="540" y="630" width="120" height="12" fill="#1a1610"/>
+  <rect x="548" y="618" width="104" height="12" fill="#1c1814"/>
+  <rect x="556" y="606" width="88" height="12" fill="#1a1610"/>
+
+  <!-- Stone path -->
+  <ellipse cx="600" cy="720" rx="60" ry="15" fill="#181410" opacity="0.8"/>
+  <rect x="590" y="635" width="20" height="90" fill="#141210" opacity="0.6"/>
+  <!-- Path stones -->
+  <g fill="#121009" opacity="0.8">
+    <ellipse cx="598" cy="680" rx="12" ry="5"/>
+    <ellipse cx="602" cy="700" rx="14" ry="5"/>
+    <ellipse cx="596" cy="720" rx="13" ry="5"/>
+  </g>
+
+  <!-- Silhouetted figure walking toward manor -->
+  <g transform="translate(590, 700)" opacity="0.85">
+    <!-- Body -->
+    <ellipse cx="0" cy="-50" rx="8" ry="18" fill="#080706"/>
+    <!-- Head -->
+    <circle cx="0" cy="-72" r="8" fill="#080706"/>
+    <!-- Hat -->
+    <ellipse cx="0" cy="-80" rx="12" ry="3" fill="#080706"/>
+    <rect x="-6" y="-94" width="12" height="16" fill="#080706"/>
+    <!-- Coat -->
+    <path d="M-8,-55 L-15,-20 L-5,-20 L0,-40 L5,-20 L15,-20 L8,-55 Z" fill="#080706"/>
+    <!-- Legs -->
+    <rect x="-6" y="-20" width="5" height="25" fill="#080706"/>
+    <rect x="1" y="-20" width="5" height="25" fill="#080706" transform="rotate(-5,4,-5)"/>
+  </g>
+
+  <!-- Window light glow effects on ground -->
+  <ellipse cx="600" cy="640" rx="50" ry="12" fill="#c89b4e" opacity="0.08" filter="url(#softGlow)"/>
+  <ellipse cx="330" cy="660" rx="30" ry="8" fill="#c89b4e" opacity="0.06" filter="url(#fog)"/>
+  <ellipse cx="870" cy="660" rx="30" ry="8" fill="#c89b4e" opacity="0.05" filter="url(#fog)"/>
+
+  <!-- Fog wisps at base -->
+  <ellipse cx="300" cy="700" rx="280" ry="50" fill="#2a2418" opacity="0.4" filter="url(#fog)"/>
+  <ellipse cx="900" cy="720" rx="250" ry="45" fill="#2a2418" opacity="0.35" filter="url(#fog)"/>
+  <ellipse cx="600" cy="680" rx="320" ry="60" fill="#1a1610" opacity="0.3" filter="url(#fog)"/>
+
+  <!-- Overlay gradient (dark vignette) -->
+  <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+    <stop offset="0%" stop-color="transparent"/>
+    <stop offset="100%" stop-color="#050403" stop-opacity="0.85"/>
+  </radialGradient>
+  <rect width="1200" height="750" fill="url(#vignette)"/>
+  
+  <!-- Classification text -->
+  <text x="60" y="50" font-family="monospace" font-size="11" fill="#c89b4e" opacity="0.7" letter-spacing="4">CZ-002 // CLASSIFIED EXHIBIT // CASE FILE MANDERFIELD MANOR</text>
+  <text x="60" y="70" font-family="monospace" font-size="10" fill="#ede5d8" opacity="0.35" letter-spacing="2">EVIDENCE PHOTOGRAPHY - DO NOT REMOVE FROM INVESTIGATION FILE</text>
+</svg>
