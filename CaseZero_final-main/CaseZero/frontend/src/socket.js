@@ -2,12 +2,14 @@ import { io } from 'socket.io-client';
 
 let socket = null;
 
+function getServerUrl() {
+  const envUrl = (import.meta.env.VITE_API || import.meta.env.VITE_API_URL || 'http://localhost:5000').trim();
+  return envUrl.replace(/\/+$/, '').replace(/\/api$/, '');
+}
+
 export function getSocket() {
   if (!socket) {
-    const serverUrl = import.meta.env.VITE_API
-      ? import.meta.env.VITE_API.replace('/api', '')
-      : 'http://localhost:5000';
-
+    const serverUrl = getServerUrl();
     const token = localStorage.getItem('cz_token');
 
     socket = io(serverUrl, {
@@ -15,7 +17,8 @@ export function getSocket() {
       autoConnect: false,
       reconnection: true,
       reconnectionAttempts: 10,
-      reconnectionDelay: 1000
+      reconnectionDelay: 1000,
+      transports: ['websocket', 'polling']
     });
   }
   return socket;

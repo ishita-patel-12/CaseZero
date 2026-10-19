@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import mongoose from 'mongoose';
 import { Case, Evidence, Puzzle } from '../models/index.js';
 import guard from '../middleware/auth.js';
 const r = Router();
@@ -12,7 +13,16 @@ const adminGuard = (q, s, next) => {
 };
 
 r.get('/', h(async (q, s) => s.json(await Promise.all((await Case.find().sort('caseNumber')).map(withCounts)))));
-r.get('/:id', h(async (q, s) => { const c = await Case.findById(q.params.id); c ? s.json(await withCounts(c)) : s.status(404).json({ error: 'Case not found' }); }));
+r.get('/:id', h(async (q, s) => {
+  let c = null;
+  if (mongoose.Types.ObjectId.isValid(q.params.id)) {
+    c = await Case.findById(q.params.id);
+  }
+  if (!c) {
+    c = await Case.findOne({ caseNumber: new RegExp(`^${q.params.id}$`, 'i') });
+  }
+  c ? s.json(await withCounts(c)) : s.status(404).json({ error: 'Case not found' });
+}));
 r.post('/', guard, adminGuard, h(async (q, s) => s.status(201).json(await Case.create(q.body))));
 r.put('/:id', guard, adminGuard, h(async (q, s) => s.json(await Case.findByIdAndUpdate(q.params.id, q.body, { new: true }))));
 r.delete('/:id', guard, adminGuard, h(async (q, s) => { await Case.findByIdAndDelete(q.params.id); s.status(204).end(); }));

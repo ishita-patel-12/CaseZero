@@ -8,9 +8,35 @@ let io = null;
 const roomSockets = new Map();
 
 export function initSocket(server, clientUrl) {
+  const rawClientUrl = clientUrl || process.env.CLIENT_URL || '';
+  const configured = rawClientUrl
+    .split(',')
+    .map(u => u.trim().replace(/\/+$/, ''))
+    .filter(Boolean);
+
+  const defaultOrigins = [
+    'http://localhost:5173',
+    'http://127.0.0.1:5173',
+    'http://localhost:3000',
+    'http://localhost:5000'
+  ];
+
   io = new Server(server, {
     cors: {
-      origin: clientUrl || '*',
+      origin: (origin, callback) => {
+        if (!origin) return callback(null, true);
+        const clean = origin.trim().replace(/\/+$/, '');
+        if (
+          configured.includes(clean) ||
+          defaultOrigins.includes(clean) ||
+          clean.startsWith('http://localhost:') ||
+          clean.startsWith('http://127.0.0.1:') ||
+          /\.vercel\.app$/.test(clean)
+        ) {
+          return callback(null, true);
+        }
+        return callback(null, true);
+      },
       methods: ['GET', 'POST', 'PUT', 'DELETE'],
       credentials: true
     }
