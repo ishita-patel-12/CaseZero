@@ -3,6 +3,7 @@ import http from 'http';
 import mongoose from 'mongoose';
 import app from './app.js';
 import { initSocket } from './socket.js';
+import { safeSeed } from './safe-seed.js';
 
 const port = process.env.PORT || 5000;
 const clientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
@@ -18,6 +19,17 @@ async function startServer() {
         serverSelectionTimeoutMS: 10000
       });
       console.log(`[CaseZero] MongoDB connected successfully to database: "${mongoose.connection.name}"`);
+
+      // Auto-initialize dossiers if collection has 0 cases (safe and non-destructive)
+      try {
+        const caseCount = await mongoose.model('Case').countDocuments();
+        if (caseCount === 0) {
+          console.log('[CaseZero] Case collection is empty. Initializing default case dossiers...');
+          await safeSeed();
+        }
+      } catch (seedErr) {
+        console.error('[CaseZero] Note: Safe seed check encountered an issue:', seedErr.message);
+      }
     } catch (err) {
       console.error('[CaseZero] Initial MongoDB connection failed:', err.message);
       console.error('[CaseZero] The server will still start, but database requests will fail until MongoDB Atlas is reachable.');
